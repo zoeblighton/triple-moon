@@ -25,11 +25,11 @@ export default function App() {
 
       <main>
         <section className="hero">
-          <h1>Come home to yourself.</h1>
+          <h1>Come home to yourself</h1>
           <p>
-            Spiritual wellness, crystal & energy work, meditation, and grounded
-            life coaching — for women who want clarity, calm, and aligned
-            change.
+            Celebrate the magic that enriches the beauty of life. Spiritual
+            wellness, crystal & energy work, meditation, and grounded life
+            coaching — for women who want clarity, calm, and aligned change.
           </p>
 
           <div className="heroActions">
@@ -45,10 +45,53 @@ export default function App() {
             <div className="heroCardTitle">What you’ll find here</div>
             <ul className="heroList">
               <li>1:1 Life Coaching (mindset + direction)</li>
-              <li>Meditation & nervous system calming</li>
-              <li>Crystal & energy support (ritual, intention, grounding)</li>
+
+              <li>
+                Reiki, crystal & energy support (ritual, intention, grounding)
+              </li>
               <li>Women’s circles + seasonal gatherings</li>
             </ul>
+          </div>
+        </section>
+
+        <section id="about" className="section">
+          <h2>About Me</h2>
+
+          <div className="aboutGrid">
+            <div className="aboutText">
+              <p>
+                Hi, I’m <strong>[Your Name]</strong> — a spiritual wellness
+                coach, meditation practitioner, and crystal & energy worker. I
+                created Triple Moon as a space for women who are seeking
+                clarity, connection, and a deeper relationship with themselves.
+              </p>
+
+              <p>
+                My work blends grounded life coaching with spiritual practices
+                such as meditation, ritual, and crystal energy. I believe true
+                healing happens when the mind, body, and spirit are supported
+                together — not separately.
+              </p>
+
+              <p>
+                Triple Moon was born from a vision of community and sacred
+                space: a place where women can gather, be seen, and grow into
+                the most aligned version of themselves. Whether through 1:1
+                coaching, group circles, or events, my intention is always the
+                same — to help you feel empowered, supported, and at home in
+                your own life.
+              </p>
+            </div>
+
+            <div className="aboutCard">
+              <h3>My Vision</h3>
+              <ul className="bullets">
+                <li>To create safe spaces for healing and self-discovery</li>
+                <li>To blend spiritual wisdom with practical life tools</li>
+                <li>To help women reconnect with their inner power</li>
+                <li>To build a community rooted in compassion and growth</li>
+              </ul>
+            </div>
           </div>
         </section>
 

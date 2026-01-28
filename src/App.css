@@ -160,6 +160,37 @@ a:hover {
 .heroList li {
   margin: 6px 0;
 }
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 14px;
+}
+
+.aboutText {
+  grid-column: span 7;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.aboutText p {
+  margin-bottom: 12px;
+}
+
+.aboutCard {
+  grid-column: span 5;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+@media (max-width: 900px) {
+  .aboutText,
+  .aboutCard {
+    grid-column: span 12;
+  }
+}
 
 .section {
   padding: 42px 0 0;
