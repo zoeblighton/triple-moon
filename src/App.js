@@ -60,10 +60,11 @@ export default function App() {
           <div className="aboutGrid">
             <div className="aboutText">
               <p>
-                Hi, I’m <strong>[Your Name]</strong> — a spiritual wellness
-                coach, meditation practitioner, and crystal & energy worker. I
-                created Triple Moon as a space for women who are seeking
-                clarity, connection, and a deeper relationship with themselves.
+                Hi, I’m <strong>[Lou]</strong> — a spiritual wellness coach,
+                meditation practitioner, and crystal & energy worker. I created
+                Triple Moon as a space for women who are seeking clarity,
+                connection, and a deeper relationship with themselves and the
+                earth.
               </p>
 
               <p>
@@ -98,6 +99,19 @@ export default function App() {
         <section id="offerings" className="section">
           <h2>Offerings</h2>
           <div className="grid">
+            {" "}
+            <article className="card">
+              <h3>Sabbat Workshops</h3>
+              <p>
+                Group workshops aligned with the Wheel of the Year — ritual,
+                intention, and seasonal wisdom.
+              </p>
+              <ul className="bullets">
+                <li>Guided rituals for each Sabbat</li>
+                <li>Practical tools to work with seasonal energy</li>
+                <li>Symbolism, myth, and spellcraft traditions</li>
+              </ul>
+            </article>
             <article className="card">
               <h3>1:1 Life Coaching</h3>
               <p>
@@ -110,20 +124,6 @@ export default function App() {
                 <li>Gentle mindset work</li>
               </ul>
             </article>
-
-            <article className="card">
-              <h3>Meditation Practice</h3>
-              <p>
-                Guided meditations and grounding tools you can actually use in
-                real life.
-              </p>
-              <ul className="bullets">
-                <li>Breath + body-based practices</li>
-                <li>Stress and overwhelm support</li>
-                <li>Personalised routines</li>
-              </ul>
-            </article>
-
             <article className="card">
               <h3>Energy & Crystal Support</h3>
               <p>

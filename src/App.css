@@ -1,11 +1,16 @@
 :root {
-  --bg: #0b0a10;
-  --card: rgba(255, 255, 255, 0.06);
-  --text: rgba(255, 255, 255, 0.92);
-  --muted: rgba(255, 255, 255, 0.68);
-  --border: rgba(255, 255, 255, 0.14);
-  --accent: rgba(255, 255, 255, 0.92);
-  --shadow: 0 18px 50px rgba(0, 0, 0, 0.45);
+  --bg: #f3f1e7;
+  --text: #2f3b2f;
+  --muted: #5a6b5a;
+
+  --border: rgba(120, 145, 120, 0.35);
+  --card: rgba(255, 255, 255, 0.65);
+
+  --accent: #7f9f7c;
+  --accent2: #b8a77c;
+  --accent3: #a06a3b;
+
+  --shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   --radius: 18px;
 }
 
@@ -18,27 +23,32 @@ body {
 }
 body {
   margin: 0;
-  font-family:
-    ui-sans-serif,
-    system-ui,
-    -apple-system,
-    Segoe UI,
-    Roboto,
-    Arial,
-    sans-serif;
+  font-family: "IM Fell English", Georgia, serif;
   background:
     radial-gradient(
-      1200px 800px at 20% 0%,
-      rgba(255, 255, 255, 0.09),
-      transparent 55%
+      900px 600px at 20% -10%,
+      rgba(127, 160, 124, 0.28) 0%,
+      rgba(127, 160, 124, 0.16) 35%,
+      rgba(127, 160, 124, 0.06) 55%,
+      transparent 75%
     ),
     radial-gradient(
-      900px 700px at 80% 20%,
-      rgba(255, 255, 255, 0.06),
-      transparent 55%
+      700px 500px at 90% 10%,
+      rgba(184, 167, 124, 0.26) 0%,
+      rgba(184, 167, 124, 0.14) 38%,
+      rgba(184, 167, 124, 0.05) 60%,
+      transparent 80%
     ),
-    var(--bg);
-  color: var(--text);
+    radial-gradient(
+      900px 650px at 50% 110%,
+      rgba(160, 106, 59, 0.16) 0%,
+      rgba(160, 106, 59, 0.08) 40%,
+      rgba(160, 106, 59, 0.03) 62%,
+      transparent 82%
+    ),
+    linear-gradient(180deg, #f3f1e7 0%, #ece8da 100%);
+  background-repeat: no-repeat;
+  background-color: #f3f1e7;
 }
 
 a {
@@ -62,13 +72,41 @@ a:hover {
   justify-content: space-between;
   padding: 14px;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background:
+    radial-gradient(
+      600px 260px at 20% 0%,
+      rgba(127, 160, 124, 0.25),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.75);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   position: sticky;
   top: 14px;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(6px);
   z-index: 10;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "IM Fell English", Georgia, serif;
+  letter-spacing: 0.4px;
+}
+
+h1 {
+  letter-spacing: 0.6px;
+}
+
+h2 {
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  letter-spacing: 0.3px;
+}
+p {
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.05);
 }
 
 .brand {
@@ -201,7 +239,16 @@ a:hover {
 h2 {
   margin: 0 0 10px;
   font-size: 26px;
+  position: relative;
 }
+
+h2::after {
+  content: " ✦";
+  opacity: 0.6;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
 .muted {
   color: var(--muted);
 }
@@ -211,14 +258,37 @@ h2 {
   grid-template-columns: repeat(12, 1fr);
   gap: 14px;
 }
+
 .card {
   grid-column: span 4;
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: var(--radius);
+  background:
+    radial-gradient(
+      600px 300px at 10% 0%,
+      rgba(127, 160, 124, 0.25),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px 360px at 90% 20%,
+      rgba(184, 167, 124, 0.2),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.65);
+  border-radius: calc(var(--radius) + 4px);
   padding: 16px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.18),
+    0 0 24px rgba(127, 160, 124, 0.2);
+}
+
 .card h3 {
   margin: 8px 0;
 }
@@ -241,9 +311,9 @@ h2 {
   font-size: 12px;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid var(--border);
-  background: rgba(0, 0, 0, 0.2);
-  color: var(--accent);
+  border: 1px solid rgba(214, 199, 158, 0.3);
+  background: rgba(127, 160, 124, 0.18);
+  color: rgba(248, 246, 236, 0.85);
   margin-bottom: 8px;
 }
 
@@ -251,16 +321,33 @@ h2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
+  padding: 10px 16px;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  background: var(--accent);
-  color: #0b0a10;
-  font-weight: 650;
+  border: 1px solid rgba(120, 145, 120, 0.45);
+  background:
+    radial-gradient(
+      circle at 20% 0%,
+      rgba(255, 255, 255, 0.7),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #8fb38b, #7f9f7c);
+  color: #fdfcf8;
+  font-weight: 700;
   font-size: 14px;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
 .buttonSecondary {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.65);
   color: var(--text);
   border: 1px solid var(--border);
 }
@@ -277,12 +364,13 @@ h2 {
   padding: 18px 14px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 12px;
 }
+
 .footerLinks {
   display: flex;
   gap: 14px;
@@ -305,4 +393,44 @@ h2 {
   .hero {
     padding: 34px 14px;
   }
+}
+@keyframes moonFloat {
+  from {
+    background-position: 0% 0%;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+.hero,
+.card,
+.footer {
+  animation: moonFloat 30s ease-in-out infinite alternate;
+}
+.page {
+  position: relative;
+}
+
+.page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  background-image:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(248, 246, 236, 0.1) 0 1px,
+      transparent 1px
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(248, 246, 236, 0.08) 0 1px,
+      transparent 1px
+    );
+  background-size:
+    38px 38px,
+    54px 54px;
+  mix-blend-mode: overlay;
 }
