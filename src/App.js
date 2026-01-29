@@ -19,9 +19,13 @@ export default function App() {
         </div>
 
         <nav className="nav">
-          <a href="#offerings">Offerings</a>
-          <a href="#events">Events</a>
-          <a href="#contact" className="button">
+          <a href="#offerings" data-label="Offerings">
+            Offerings
+          </a>
+          <a href="#events" data-label="Events">
+            Events
+          </a>
+          <a className="button" href="#contact" data-label="Book / Contact">
             Book / Contact
           </a>
         </nav>
@@ -49,7 +53,6 @@ export default function App() {
             <div className="heroCardTitle">What you’ll find here</div>
             <ul className="heroList">
               <li>1:1 Life Coaching (mindset + direction)</li>
-
               <li>
                 Reiki, crystal & energy support (ritual, intention, grounding)
               </li>
@@ -64,7 +67,7 @@ export default function App() {
           <div className="aboutGrid">
             <div className="aboutText">
               <p>
-                Hi, I’m <strong>[Lou]</strong> — a spiritual wellness coach,
+                Hi, I’m <strong>Lou</strong> — a spiritual wellness coach,
                 meditation practitioner, and crystal & energy worker. I created
                 Triple Moon as a space for women who are seeking clarity,
                 connection, and a deeper relationship with themselves and the
@@ -88,9 +91,15 @@ export default function App() {
               </p>
             </div>
 
-            <div className="aboutCard">
-              <h3>My Vision</h3>
-              <ul className="bullets">
+            <div className="aboutCard aboutCard--vision">
+              <div className="aboutCardHead">
+                <h3>My Vision</h3>
+                <p className="muted">
+                  A gentle, grounded space for women to return to themselves.
+                </p>
+              </div>
+
+              <ul className="aboutList">
                 <li>To create safe spaces for healing and self-discovery</li>
                 <li>To blend spiritual wisdom with practical life tools</li>
                 <li>To help women reconnect with their inner power</li>
@@ -103,7 +112,6 @@ export default function App() {
         <section id="offerings" className="section">
           <h2>Offerings</h2>
           <div className="grid">
-            {" "}
             <article className="card">
               <h3>Sabbat Workshops</h3>
               <p>
@@ -116,6 +124,7 @@ export default function App() {
                 <li>Symbolism, myth, and spellcraft traditions</li>
               </ul>
             </article>
+
             <article className="card">
               <h3>1:1 Life Coaching</h3>
               <p>
@@ -128,6 +137,7 @@ export default function App() {
                 <li>Gentle mindset work</li>
               </ul>
             </article>
+
             <article className="card">
               <h3>Energy & Crystal Support</h3>
               <p>
