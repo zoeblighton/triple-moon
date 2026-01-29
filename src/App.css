@@ -67,24 +67,15 @@ a:hover {
 
 .header {
   display: flex;
-  gap: 18px;
   align-items: center;
   justify-content: space-between;
-  padding: 14px;
-  border: 1px solid var(--border);
-  background:
-    radial-gradient(
-      600px 260px at 20% 0%,
-      rgba(127, 160, 124, 0.25),
-      transparent 60%
-    ),
-    rgba(255, 255, 255, 0.75);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  position: sticky;
-  top: 14px;
-  backdrop-filter: blur(6px);
-  z-index: 10;
+
+  padding: 18px 28px;
+  border-radius: 0;
+  background: transparent;
+
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: none;
 }
 
 h1,
