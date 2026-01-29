@@ -5,11 +5,15 @@ export default function App() {
     <div className="page">
       <header className="header">
         <div className="brand">
-          <div className="brandMark" aria-hidden="true">
-            ☾
-          </div>
           <div>
-            <div className="brandName">Triple Moon</div>
+            <h1 className="logo">
+              <img
+                src="/logo.png"
+                alt="Triple Moon logo"
+                className="logo"
+                width="500"
+              />
+            </h1>
             <div className="brandTag">Spiritual Wellness & Life Coaching</div>
           </div>
         </div>
