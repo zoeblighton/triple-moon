@@ -13,7 +13,7 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 
-    <title>React App</title>
+    <title>Triple Moon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,40 +27,6 @@
       rel="stylesheet"
     />
   </head>
-
-  <script>
-    (function () {
-      const nav = document.querySelector(".nav");
-      if (!nav) return;
-
-      const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
-      const open = () => document.body.classList.add("navOpen");
-      const close = () => document.body.classList.remove("navOpen");
-
-      nav.addEventListener("click", (e) => {
-        if (!isMobile()) return;
-
-        const link = e.target.closest("a");
-        if (!link) return;
-
-        if (!document.body.classList.contains("navOpen")) {
-          e.preventDefault();
-          open();
-        }
-      });
-
-      document.addEventListener("click", (e) => {
-        if (!isMobile()) return;
-        if (!document.body.classList.contains("navOpen")) return;
-        if (nav.contains(e.target)) return;
-        close();
-      });
-
-      window.addEventListener("resize", () => {
-        if (!isMobile()) close();
-      });
-    })();
-  </script>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>

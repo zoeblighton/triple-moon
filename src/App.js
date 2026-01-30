@@ -1,24 +1,71 @@
+import { useEffect, useRef, useState } from "react";
 import "./App.css";
 
 export default function App() {
+  const [navOpen, setNavOpen] = useState(false);
+  const navRef = useRef(null);
+
+  // Only treat it as "mobile nav" at <= 900px to match your CSS media query
+  const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+
+  // Keep body class in sync with state (matches your CSS: body.navOpen ...)
+  useEffect(() => {
+    if (navOpen) document.body.classList.add("navOpen");
+    else document.body.classList.remove("navOpen");
+  }, [navOpen]);
+
+  // Close when clicking outside the nav (mobile only)
+  useEffect(() => {
+    function onDocClick(e) {
+      if (!isMobile()) return;
+      if (!navOpen) return;
+      if (navRef.current && navRef.current.contains(e.target)) return;
+      setNavOpen(false);
+    }
+
+    document.addEventListener("click", onDocClick);
+    return () => document.removeEventListener("click", onDocClick);
+  }, [navOpen]);
+
+  // Close if you resize up to desktop
+  useEffect(() => {
+    function onResize() {
+      if (!isMobile()) setNavOpen(false);
+    }
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  function handleNavClick(e) {
+    if (!isMobile()) return;
+
+    const link = e.target.closest("a");
+    if (!link) return;
+
+    // First tap opens the expanded menu (prevents accidental navigation)
+    if (!navOpen) {
+      e.preventDefault();
+      setNavOpen(true);
+      return;
+    }
+
+    // If menu is already open, allow navigation and then close it
+    setNavOpen(false);
+  }
+
   return (
     <div className="page">
       <header className="header">
         <div className="brand">
           <div>
-            <h1 className="logo">
-              <img
-                src="/logo.png"
-                alt="Triple Moon logo"
-                className="logo"
-                width="500"
-              />
+            <h1 className="logoWrap">
+              <img src="/logo.png" alt="Triple Moon logo" className="logo" />
             </h1>
             <div className="brandTag">Spiritual Wellness & Life Coaching</div>
           </div>
         </div>
 
-        <nav className="nav">
+        <nav ref={navRef} className="nav" onClick={handleNavClick}>
           <a href="#offerings" data-label="Offerings">
             Offerings
           </a>
