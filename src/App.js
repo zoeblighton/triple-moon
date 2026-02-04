@@ -5,16 +5,13 @@ export default function App() {
   const [navOpen, setNavOpen] = useState(false);
   const navRef = useRef(null);
 
-  // Only treat it as "mobile nav" at <= 900px to match your CSS media query
   const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
 
-  // Keep body class in sync with state (matches your CSS: body.navOpen ...)
   useEffect(() => {
     if (navOpen) document.body.classList.add("navOpen");
     else document.body.classList.remove("navOpen");
   }, [navOpen]);
 
-  // Close when clicking outside the nav (mobile only)
   useEffect(() => {
     function onDocClick(e) {
       if (!isMobile()) return;
@@ -27,7 +24,6 @@ export default function App() {
     return () => document.removeEventListener("click", onDocClick);
   }, [navOpen]);
 
-  // Close if you resize up to desktop
   useEffect(() => {
     function onResize() {
       if (!isMobile()) setNavOpen(false);
@@ -42,14 +38,12 @@ export default function App() {
     const link = e.target.closest("a");
     if (!link) return;
 
-    // First tap opens the expanded menu (prevents accidental navigation)
     if (!navOpen) {
       e.preventDefault();
       setNavOpen(true);
       return;
     }
 
-    // If menu is already open, allow navigation and then close it
     setNavOpen(false);
   }
 
@@ -59,9 +53,15 @@ export default function App() {
         <div className="brand">
           <div>
             <h1 className="logoWrap">
-              <img src="/logo.png" alt="Triple Moon logo" className="logo" />
+              <img
+                src="/images/logo.png"
+                alt="Triple Moon logo"
+                className="logo"
+              />
             </h1>
-            <div className="brandTag">Spiritual Wellness & Life Coaching</div>
+            <div tags="Spiritual Workshops Colchester" ClassName="brandTag">
+              Spiritual Workshops & Life Coaching
+            </div>
           </div>
         </div>
 
@@ -80,31 +80,55 @@ export default function App() {
 
       <main>
         <section className="hero">
-          <h1>Come home to yourself</h1>
-          <p>
-            Celebrate the magic that enriches the beauty of life. Spiritual
-            wellness, crystal & energy work, meditation, and grounded life
-            coaching — for women who want clarity, calm, and aligned change.
-          </p>
+          <div className="heroGrid">
+            <div className="heroMain">
+              <h1>Come home to yourself</h1>
+              <p>
+                Celebrate the magic that enriches the beauty of life. Spiritual
+                wellness, crystal & energy work, meditation, and grounded life
+                coaching. For women who want clarity, calm, and aligned change.
+              </p>
 
-          <div className="heroActions">
-            <a className="button" href="#contact">
-              Work with me
-            </a>
-            <a className="button buttonSecondary" href="#events">
-              See upcoming events
-            </a>
-          </div>
+              <div className="heroActions">
+                <a className="button" href="#contact">
+                  Work with me
+                </a>
+                <a className="button buttonSecondary" href="#events">
+                  See upcoming events
+                </a>
+              </div>
+            </div>
 
-          <div className="heroCard">
-            <div className="heroCardTitle">What you’ll find here</div>
-            <ul className="heroList">
-              <li>1:1 Life Coaching (mindset + direction)</li>
-              <li>
-                Reiki, crystal & energy support (ritual, intention, grounding)
-              </li>
-              <li>Women’s circles + seasonal gatherings</li>
-            </ul>
+            <div className="photoMarquee" aria-label="Gallery preview">
+              <div className="photoTrack">
+                {[
+                  "/photos/1.jpg",
+                  "/photos/2.jpg",
+                  "/photos/3.jpg",
+                  "/photos/4.jpg",
+                  "/photos/5.jpg",
+                  "/photos/6.jpg",
+                ].map((src, i) => (
+                  <div className="photoTile" key={"a-" + src + i}>
+                    <img src={src} alt="" loading="lazy" />
+                  </div>
+                ))}
+
+                {/* duplicate for loop */}
+                {[
+                  "/photos/1.jpg",
+                  "/photos/2.jpg",
+                  "/photos/3.jpg",
+                  "/photos/4.jpg",
+                  "/photos/5.jpg",
+                  "/photos/6.jpg",
+                ].map((src, i) => (
+                  <div className="photoTile" key={"b-" + src + i}>
+                    <img src={src} alt="" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
 
@@ -125,7 +149,7 @@ export default function App() {
                 My work blends grounded life coaching with spiritual practices
                 such as meditation, ritual, and crystal energy. I believe true
                 healing happens when the mind, body, and spirit are supported
-                together — not separately.
+                together, not separately.
               </p>
 
               <p>
@@ -133,17 +157,25 @@ export default function App() {
                 space: a place where women can gather, be seen, and grow into
                 the most aligned version of themselves. Whether through 1:1
                 coaching, group circles, or events, my intention is always the
-                same — to help you feel empowered, supported, and at home in
-                your own life.
+                same: to help you feel empowered, supported, and at home in your
+                own life.
               </p>
             </div>
 
             <div className="aboutCard aboutCard--vision">
               <div className="aboutCardHead">
-                <h3>My Vision</h3>
-                <p className="muted">
-                  A gentle, grounded space for women to return to themselves.
-                </p>
+                <div className="aboutOwner">
+                  <img
+                    src="/owner.jpg"
+                    alt="Lou, Triple Moon"
+                    className="aboutOwnerImg"
+                    loading="lazy"
+                  />
+                </div>
+                <h3>
+                  I am dedicated to creating a gentle, grounded space for women
+                  to return to themselves:
+                </h3>
               </div>
 
               <ul className="aboutList">
@@ -175,8 +207,8 @@ export default function App() {
             <article className="card">
               <h3>1:1 Life Coaching</h3>
               <p>
-                Clarity, confidence, and action — with spiritual support and
-                practical steps.
+                Clarity, confidence, and action. Spiritual support and practical
+                steps.
               </p>
               <ul className="bullets">
                 <li>Goal setting + accountability</li>
@@ -197,20 +229,36 @@ export default function App() {
                 <li>Seasonal rituals</li>
               </ul>
             </article>
+            <article className="card">
+              <h3>The Enchanted Hen - Bridal Workshop</h3>
+              <p>
+                You bring the bubbles, i bring the magic. A sacred celebration
+                of love using ritual, flowers, and shared intention.
+              </p>
+              <ul className="bullets">
+                <li>Love rituals and intention setting for the bridal party</li>
+                <li>Symbolic flower arranging or crown making</li>
+                <li>Group blessing and sharing circle</li>
+              </ul>
+            </article>
           </div>
         </section>
 
         <section id="events" className="section">
           <div className="sectionHeader">
             <h2>Upcoming events</h2>
-            <p className="muted">(We’ll make this dynamic in Chunk 2.)</p>
+            <p className="muted">
+              Join me for upcoming workshops, limited spaces avaliable to ensure
+              intimate classes. Register your interest below to be the first to
+              know when new dates are released.
+            </p>
           </div>
 
           <div className="grid">
             <article className="card">
               <div className="pill">Circle</div>
               <h3>Women’s New Moon Gathering</h3>
-              <p className="muted">Date TBC • Colchester / Online</p>
+              <p className="muted">Date TBC • Brightlingsea</p>
               <p>
                 Intentions, grounding meditation, and a simple ritual to reset
                 for the month.
@@ -218,9 +266,9 @@ export default function App() {
             </article>
 
             <article className="card">
-              <div className="pill">Workshop</div>
+              <div className="pill">Crystal Workshop</div>
               <h3>Crystal Energy Foundations</h3>
-              <p className="muted">Date TBC • Online</p>
+              <p className="muted">Date TBC • Brightlingsea</p>
               <p>
                 Learn how to choose, cleanse, and work with crystals in everyday
                 life.
@@ -228,12 +276,14 @@ export default function App() {
             </article>
 
             <article className="card">
-              <div className="pill">Meditation</div>
-              <h3>Deep Rest Session</h3>
-              <p className="muted">Date TBC • Online</p>
+              <div className="pill">Ostara Workshop</div>
+              <h3>Celebrate the Spring Equinox</h3>
+              <p className="muted">Date TBC • Brightlingsea</p>
               <p>
-                A calming guided meditation designed for stress relief and
-                nervous system support.
+                Join me for a gentle, creative workshop honouring Ostara — the
+                festival of balance, rebirth, and new beginnings. We’ll explore
+                seasonal symbolism, set intentions for the months ahead, and
+                create a spring-inspired magical craft to take home.
               </p>
             </article>
           </div>

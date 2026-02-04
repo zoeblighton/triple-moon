@@ -165,7 +165,6 @@ p {
   align-items: center;
 }
 
-/* NEW: logo sizing lives here (not width="500" in JSX) */
 .logoWrap {
   margin: 0;
   line-height: 0;
@@ -210,7 +209,7 @@ p {
 .nav a {
   font-size: clamp(13px, 1.6vw, 14px);
   color: var(--muted);
-  min-height: 44px; /* tap target */
+  min-height: 44px;
   display: inline-flex;
   align-items: center;
 }
@@ -221,51 +220,51 @@ p {
 
 .hero {
   margin-top: 22px;
-  padding: clamp(24px, 4vw, 42px) clamp(14px, 3vw, 18px);
-  border-radius: calc(var(--radius) + 6px);
-  border: 1px solid var(--border);
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.06),
-    rgba(255, 255, 255, 0.03)
-  );
-  box-shadow: var(--shadow);
+  padding: clamp(22px, 3.5vw, 40px);
+  border-radius: 12px; /* less bubbly */
+  border: 1px solid rgba(120, 145, 120, 0.22);
+  background: rgba(255, 255, 255, 0.55); /* single calm surface */
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1); /* lighter */
 }
 
 .hero h1 {
   margin: 0 0 10px;
-  font-size: clamp(34px, 5vw, 54px);
-  line-height: 1.05;
+  font-size: clamp(32px, 4.2vw, 48px);
+  line-height: 1.06;
   font-family: "IM Fell English", Georgia, serif;
+  letter-spacing: 0.3px;
 }
 
 .hero p {
   margin: 0 0 18px;
-  max-width: 65ch;
+  max-width: 70ch;
   color: var(--muted);
-  font-size: clamp(15px, 1.4vw, 16px);
+  font-size: clamp(15px, 1.35vw, 16px);
 }
 
 .heroActions {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin: 18px 0 24px;
+  margin: 16px 0 18px;
 }
 
 .heroCard {
-  border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.65);
-  border-radius: var(--radius);
-  padding: 16px;
-  max-width: 720px;
-  backdrop-filter: blur(8px);
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(120, 145, 120, 0.22);
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  max-width: 78ch;
 }
 
 .heroCardTitle {
-  font-weight: 650;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
+  font-weight: 600;
   font-family: "IM Fell English", Georgia, serif;
+  color: var(--text);
+  letter-spacing: 0.2px;
 }
 
 .heroList {
@@ -275,7 +274,106 @@ p {
 }
 
 .heroList li {
-  margin: 6px 0;
+  margin: 8px 0;
+}
+.heroGrid {
+  display: grid;
+  gap: 18px;
+  align-items: start;
+  grid-template-columns: 1.35fr 0.9fr;
+}
+
+.heroMain {
+  min-width: 0;
+}
+
+.heroAside {
+  min-width: 0;
+}
+.heroAside .heroCard {
+  margin-top: 0;
+}
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Auto-scrolling photo marquee */
+.photoMarquee {
+  margin-top: 14px;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+
+  /* subtle fade edges */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.photoTrack {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: photoScroll 32s linear infinite;
+}
+
+.photoMarquee:hover .photoTrack {
+  animation-play-state: paused;
+}
+
+.photoTile {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(120, 145, 120, 0.22);
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  flex: 0 0 auto;
+  width: 180px;
+  height: 180px;
+}
+
+.photoTile img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+@keyframes photoScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photoTrack {
+    animation: none;
+  }
+}
+
+/* Slightly bigger tiles on small screens */
+@media (max-width: 560px) {
+  .photoTile {
+    width: 160px;
+  }
+  .photoTile img {
+    height: 120px;
+  }
 }
 
 .section {
@@ -312,7 +410,6 @@ p {
 }
 
 .aboutCard::before {
-  content: "";
   position: absolute;
   top: 10px;
   left: 12px;
@@ -340,6 +437,24 @@ p {
 .aboutCard p,
 .aboutCard li {
   color: var(--muted);
+}
+.aboutOwner {
+  display: grid;
+  place-items: center;
+  margin-top: 16px;
+}
+
+.aboutOwnerImg {
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  object-fit: cover;
+
+  outline-offset: 1px;
+  border: 1px solid rgba(120, 145, 120, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  margin-bottom: 16px;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .grid {
@@ -412,36 +527,28 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 16px;
-  border-radius: 999px;
-  border: 1px solid rgba(120, 145, 120, 0.45);
-  background:
-    radial-gradient(
-      circle at 20% 0%,
-      rgba(255, 255, 255, 0.7),
-      transparent 60%
-    ),
-    linear-gradient(180deg, #8fb38b, #7f9f7c);
-  color: #fdfcf8;
-  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 10px; /* no pill */
+  border: 1px solid rgba(120, 145, 120, 0.35);
+  background: rgba(127, 159, 124, 0.16);
+  color: var(--text);
+  font-weight: 600;
   font-size: 14px;
-  letter-spacing: 0.3px;
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.2px;
+  box-shadow: none;
   transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-  min-height: 44px;
+    transform 0.15s ease,
+    background 0.15s ease;
+  min-height: 42px;
 }
-
 .button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+  background: rgba(127, 159, 124, 0.22);
 }
 
 .buttonSecondary {
-  background: rgba(255, 255, 255, 0.65);
-  color: var(--text);
-  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(120, 145, 120, 0.28);
 }
 
 .contactRow {
@@ -477,7 +584,6 @@ p {
     padding-right: clamp(78px, 14vw, 120px);
   }
 
-  /* Optional: dim background when nav is open */
   body.navOpen::after {
     content: "";
     position: fixed;
@@ -584,14 +690,14 @@ p {
     text-indent: 0;
     overflow: visible;
   }
-  /* ✅ Stop the duplicate label text when nav is open */
+
   body.navOpen .nav a {
-    font-size: 0; /* hides the actual <a> text */
+    font-size: 0;
     line-height: 0;
   }
 
   body.navOpen .nav a::after {
-    font-size: 14px; /* re-enable font size for the label */
+    font-size: 14px;
     line-height: 1.2;
   }
 
