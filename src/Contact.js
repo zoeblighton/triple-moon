@@ -12,7 +12,7 @@ export default function ContactSection() {
   });
 
   const [status, setStatus] = useState({
-    state: "idle", // "idle" | "sending" | "success" | "error"
+    state: "idle",
     message: "",
   });
 
@@ -96,7 +96,6 @@ export default function ContactSection() {
         </a>
       </div>
 
-      {/* Controlled form */}
       <form className="contactForm" onSubmit={onSubmit}>
         <label>
           Name

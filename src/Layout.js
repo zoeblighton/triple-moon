@@ -73,9 +73,6 @@ export default function Layout({ children, showContact = true }) {
           </div>
         </div>
 
-        {/* IMPORTANT:
-            On other pages, these anchors should go back to home sections.
-        */}
         <nav ref={navRef} className="nav" onClick={handleNavClick}>
           <Link to="/#offerings" data-label="Offerings">
             Offerings

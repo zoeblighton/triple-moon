@@ -40,7 +40,6 @@ export default function Home() {
                 </div>
               ))}
 
-              {/* duplicate for loop */}
               {[
                 "/photos/1.jpg",
                 "/photos/2.jpg",
@@ -116,7 +115,7 @@ export default function Home() {
       <section id="offerings" className="section">
         <h2>Offerings</h2>
         <div className="grid">
-          <article className="card">
+          <Link to="./SabbatWorkshops" className="card cardLink">
             <h3>Sabbat Workshops</h3>
             <p>
               Group workshops aligned with the Wheel of the Year — ritual,
@@ -127,9 +126,9 @@ export default function Home() {
               <li>Practical tools to work with seasonal energy</li>
               <li>Symbolism, myth, and spellcraft traditions</li>
             </ul>
-          </article>
+          </Link>
 
-          <article className="card">
+          <Link to="./EnchantedHen" className="card cardLink">
             <h3>The Enchanted Hen - Bridal Workshop</h3>
             <p>
               You bring the bubbles, i bring the magic. A sacred celebration of
@@ -140,7 +139,7 @@ export default function Home() {
               <li>Symbolic flower arranging or crown making</li>
               <li>Group blessing and sharing circle</li>
             </ul>
-          </article>
+          </Link>
           <Link to="/coaching" className="card cardLink">
             <h3>1:1 Life Coaching</h3>
             <p>
@@ -153,7 +152,7 @@ export default function Home() {
               <li>Gentle mindset work</li>
             </ul>
           </Link>
-          <article className="card">
+          <Link to="./EnergyCrystalSupport" className="card cardLink">
             <h3>Energy & Crystal Support</h3>
             <p>
               Ritual, intention setting, and crystal wisdom for energetic
@@ -164,7 +163,7 @@ export default function Home() {
               <li>Crystal selection guidance</li>
               <li>Seasonal rituals</li>
             </ul>
-          </article>
+          </Link>
         </div>
       </section>
 

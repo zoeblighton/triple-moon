@@ -1,5 +1,5 @@
 import Layout from "./Layout";
-import "./Coaching.css"; // optional, for just a few extras
+import "./Coaching.css";
 
 export default function Coaching() {
   return (
