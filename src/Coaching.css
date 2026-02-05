@@ -1,0 +1,99 @@
+@media (min-width: 900px) {
+  .coachingGrid {
+    grid-template-columns: 1.25fr 0.9fr;
+    align-items: start;
+  }
+}
+
+.coachingGrid .card p {
+  line-height: 1.7;
+}
+
+.coachingCtaText {
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+.coaching-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem 5rem;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #2b2b2b;
+}
+.coachingGrid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.coaching-header {
+  margin-bottom: 3rem;
+}
+
+.coaching-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  max-width: 600px;
+}
+
+.coaching-content h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.coaching-content h3 {
+  font-size: 1.3rem;
+  margin: 3rem 0 1rem;
+}
+
+.coaching-content p {
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  max-width: 750px;
+}
+
+.coaching-questions {
+  margin: 1.5rem 0 3rem;
+  padding-left: 1.2rem;
+}
+
+.coaching-questions li {
+  margin-bottom: 0.9rem;
+  line-height: 1.6;
+}
+
+.coaching-cta {
+  border-top: 1px solid #ddd;
+  padding-top: 2rem;
+  margin-top: 3rem;
+}
+
+.coaching-cta p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.7rem 1.6rem;
+  background-color: #3a5f5b; /* earthy, calm */
+  color: white;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #2f4f4b;
+}
