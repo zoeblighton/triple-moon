@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import ContactSection from "./Contact";
+import Resources from "./Resources";
 
 export default function Layout({ children, showContact = true }) {
   const [navOpen, setNavOpen] = useState(false);
@@ -79,6 +80,9 @@ export default function Layout({ children, showContact = true }) {
           </Link>
           <Link to="/#events" data-label="Events">
             Events
+          </Link>
+          <Link to="/resources" data-label="Resources">
+            Resources
           </Link>
           <Link className="button" to="/#contact" data-label="Book / Contact">
             Book / Contact
