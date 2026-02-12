@@ -531,7 +531,7 @@ p {
     rgba(255, 255, 255, 0.65);
   border-radius: calc(var(--radius) + 4px);
   padding: 16px;
-  box-shadow: var(--shadow);
+
   transition:
     transform 0.35s ease,
     box-shadow 0.35s ease;
@@ -540,8 +540,8 @@ p {
 .card:hover {
   transform: translateY(-4px);
   box-shadow:
-    0 16px 40px rgba(0, 0, 0, 0.18),
-    0 0 24px rgba(127, 160, 124, 0.2);
+    0 4px 10px rgba(0, 0, 0, 0.18),
+    0 0 6px rgba(127, 160, 124, 0.2);
 }
 
 .card h3 {

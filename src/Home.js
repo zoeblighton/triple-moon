@@ -45,27 +45,14 @@ export default function Home() {
           <div className="photoMarquee" aria-label="Gallery preview">
             <div className="photoTrack">
               {[
-                "/photos/1.jpg",
-                "/photos/2.jpg",
-                "/photos/3.jpg",
-                "/photos/4.jpg",
-                "/photos/5.jpg",
-                "/photos/6.jpg",
+                "/images/flowers.jpg",
+                "/images/altar.jpg",
+
+                "/images/promo.jpg",
+                "/images/drums.jpg",
+                "/images/altar2.jpg",
               ].map((src, i) => (
                 <div className="photoTile" key={"a-" + src + i}>
-                  <img src={src} alt="" loading="lazy" />
-                </div>
-              ))}
-
-              {[
-                "/photos/1.jpg",
-                "/photos/2.jpg",
-                "/photos/3.jpg",
-                "/photos/4.jpg",
-                "/photos/5.jpg",
-                "/photos/6.jpg",
-              ].map((src, i) => (
-                <div className="photoTile" key={"b-" + src + i}>
                   <img src={src} alt="" loading="lazy" />
                 </div>
               ))}
@@ -211,7 +198,7 @@ export default function Home() {
         </div>
       </section>
       <section id="about" className="section">
-        <h2>About Me</h2>
+        <h2>Meet the magical Lou</h2>
 
         <div className="aboutGrid">
           <div className="aboutText">
@@ -237,13 +224,31 @@ export default function Home() {
               circles, or events, my intention is always the same: to help you
               feel empowered, supported, and at home in your own life.
             </p>
+
+            <div className="photoMarquee" aria-label="Gallery preview">
+              <div className="photoTrack">
+                {[
+                  "/images/lou-groovy.jpg",
+                  "/images/lou-field.jpg",
+                  "/images/happy-lou.jpg",
+                  "/images/tree-hugger.jpg",
+                  "/images/pretty.jpg",
+                  "/images/roaming.jpg",
+                  "/images/workshop4.jpg",
+                ].map((src, i) => (
+                  <div className="photoTile" key={"a-" + src + i}>
+                    <img src={src} alt="" loading="lazy" />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
           <div className="aboutCard aboutCard--vision">
             <div className="aboutCardHead">
               <div className="aboutOwner">
                 <img
-                  src="/owner.jpg"
+                  src="/images/portrait.jpg"
                   alt="Lou, Triple Moon"
                   className="aboutOwnerImg"
                   loading="lazy"
