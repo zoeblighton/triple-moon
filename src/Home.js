@@ -58,57 +58,95 @@ export default function Home() {
       </section>
 
       <section id="offerings" className="section">
-        <h2>Offerings</h2>
-        <div className="grid">
-          <Link to="./SabbatWorkshops" className="card cardLink">
-            <h3>Sabbat Workshops</h3>
-            <p>
-              Group workshops aligned with the Wheel of the Year — ritual,
-              intention, and seasonal wisdom.
-            </p>
-            <ul className="bullets">
-              <li>Guided rituals for each Sabbat</li>
-              <li>Practical tools to work with seasonal energy</li>
-              <li>Symbolism, myth, and spellcraft traditions</li>
-            </ul>
-          </Link>
+        <div className="sectionHeader">
+          <h2>Offerings</h2>
 
-          <Link to="./EnchantedHen" className="card cardLink">
-            <h3>The Enchanted Hen - Bridal Workshop</h3>
-            <p>
-              You bring the bubbles, i bring the magic. A sacred celebration of
-              love.
-            </p>
-            <ul className="bullets">
-              <li>Love rituals and intention setting for the bridal party</li>
-              <li>Symbolic flower arranging or crown making</li>
-              <li>Group blessing and sharing circle</li>
-            </ul>
-          </Link>
-          <Link to="/coaching" className="card cardLink">
-            <h3>1:1 Life Coaching</h3>
-            <p>
-              Clarity, confidence, and action. Spiritual support and practical
-              steps.
-            </p>
-            <ul className="bullets">
-              <li>Goal setting + accountability</li>
-              <li>Values & purpose alignment</li>
-              <li>Gentle mindset work</li>
-            </ul>
-          </Link>
-          <Link to="./EnergyCrystalSupport" className="card cardLink">
-            <h3>Energy & Crystal Support</h3>
-            <p>
-              Ritual, intention setting, and crystal wisdom for energetic
-              clarity.
-            </p>
-            <ul className="bullets">
-              <li>Energetic resets</li>
-              <li>Crystal selection guidance</li>
-              <li>Seasonal rituals</li>
-            </ul>
-          </Link>
+          {/* On-page scroller */}
+          <div
+            className="scrollerControls"
+            aria-label="Offerings scroller controls"
+          >
+            <button
+              type="button"
+              className="scrollBtn"
+              onClick={() => scrollOfferings(-1)}
+              aria-label="Scroll left"
+            >
+              ‹
+            </button>
+            <button
+              type="button"
+              className="scrollBtn"
+              onClick={() => scrollOfferings(1)}
+              aria-label="Scroll right"
+            >
+              ›
+            </button>
+          </div>
+        </div>
+
+        <div className="offeringsWrap">
+          <div
+            className="offeringsRow"
+            ref={offeringsRef}
+            tabIndex={0}
+            aria-label="Offerings horizontal list"
+          >
+            <Link to="./SabbatWorkshops" className="card cardLink offeringCard">
+              <h3>Sabbat Workshops</h3>
+              <p>
+                Group workshops aligned with the Wheel of the Year — ritual,
+                intention, and seasonal wisdom.
+              </p>
+              <ul className="bullets">
+                <li>Guided rituals for each Sabbat</li>
+                <li>Practical tools to work with seasonal energy</li>
+                <li>Symbolism, myth, and spellcraft traditions</li>
+              </ul>
+            </Link>
+
+            <Link to="./EnchantedHen" className="card cardLink offeringCard">
+              <h3>The Enchanted Hen - Bridal Workshop</h3>
+              <p>
+                You bring the bubbles, i bring the magic. A sacred celebration
+                of love.
+              </p>
+              <ul className="bullets">
+                <li>Love rituals and intention setting for the bridal party</li>
+                <li>Symbolic flower arranging or crown making</li>
+                <li>Group blessing and sharing circle</li>
+              </ul>
+            </Link>
+
+            <Link to="/coaching" className="card cardLink offeringCard">
+              <h3>1:1 Life Coaching</h3>
+              <p>
+                Clarity, confidence, and action. Spiritual support and practical
+                steps.
+              </p>
+              <ul className="bullets">
+                <li>Goal setting + accountability</li>
+                <li>Values & purpose alignment</li>
+                <li>Gentle mindset work</li>
+              </ul>
+            </Link>
+
+            <Link
+              to="./EnergyCrystalSupport"
+              className="card cardLink offeringCard"
+            >
+              <h3>Energy & Crystal Support</h3>
+              <p>
+                Ritual, intention setting, and crystal wisdom for energetic
+                clarity.
+              </p>
+              <ul className="bullets">
+                <li>Energetic resets</li>
+                <li>Crystal selection guidance</li>
+                <li>Seasonal rituals</li>
+              </ul>
+            </Link>
+          </div>
         </div>
       </section>
 
