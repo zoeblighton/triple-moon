@@ -57,61 +57,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="section">
-        <h2>About Me</h2>
-
-        <div className="aboutGrid">
-          <div className="aboutText">
-            <p>
-              Hi, I’m <strong>Lou</strong> — a spiritual wellness coach,
-              meditation practitioner, and crystal & energy worker. I created
-              Triple Moon as a space for women who are seeking clarity,
-              connection, and a deeper relationship with themselves and the
-              earth.
-            </p>
-
-            <p>
-              My work blends grounded life coaching with spiritual practices
-              such as meditation, ritual, and crystal energy. I believe true
-              healing happens when the mind, body, and spirit are supported
-              together, not separately.
-            </p>
-
-            <p>
-              Triple Moon was born from a vision of community and sacred space:
-              a place where women can gather, be seen, and grow into the most
-              aligned version of themselves. Whether through 1:1 coaching, group
-              circles, or events, my intention is always the same: to help you
-              feel empowered, supported, and at home in your own life.
-            </p>
-          </div>
-
-          <div className="aboutCard aboutCard--vision">
-            <div className="aboutCardHead">
-              <div className="aboutOwner">
-                <img
-                  src="/owner.jpg"
-                  alt="Lou, Triple Moon"
-                  className="aboutOwnerImg"
-                  loading="lazy"
-                />
-              </div>
-              <h3>
-                I am dedicated to creating a gentle, grounded space for women to
-                return to themselves:
-              </h3>
-            </div>
-
-            <ul className="aboutList">
-              <li>To create safe spaces for healing and self-discovery</li>
-              <li>To blend spiritual wisdom with practical life tools</li>
-              <li>To help women reconnect with their inner power</li>
-              <li>To build a community rooted in compassion and growth</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <section id="offerings" className="section">
         <h2>Offerings</h2>
         <div className="grid">
@@ -208,6 +153,60 @@ export default function Home() {
               ahead, and get creative with a spring craft.
             </p>
           </article>
+        </div>
+      </section>
+      <section id="about" className="section">
+        <h2>About Me</h2>
+
+        <div className="aboutGrid">
+          <div className="aboutText">
+            <p>
+              Hi, I’m <strong>Lou</strong> — a spiritual wellness coach,
+              meditation practitioner, and crystal & energy worker. I created
+              Triple Moon as a space for women who are seeking clarity,
+              connection, and a deeper relationship with themselves and the
+              earth.
+            </p>
+
+            <p>
+              My work blends grounded life coaching with spiritual practices
+              such as meditation, ritual, and crystal energy. I believe true
+              healing happens when the mind, body, and spirit are supported
+              together, not separately.
+            </p>
+
+            <p>
+              Triple Moon was born from a vision of community and sacred space:
+              a place where women can gather, be seen, and grow into the most
+              aligned version of themselves. Whether through 1:1 coaching, group
+              circles, or events, my intention is always the same: to help you
+              feel empowered, supported, and at home in your own life.
+            </p>
+          </div>
+
+          <div className="aboutCard aboutCard--vision">
+            <div className="aboutCardHead">
+              <div className="aboutOwner">
+                <img
+                  src="/owner.jpg"
+                  alt="Lou, Triple Moon"
+                  className="aboutOwnerImg"
+                  loading="lazy"
+                />
+              </div>
+              <h3>
+                I am dedicated to creating a gentle, grounded space for women to
+                return to themselves:
+              </h3>
+            </div>
+
+            <ul className="aboutList">
+              <li>To create safe spaces for healing and self-discovery</li>
+              <li>To blend spiritual wisdom with practical life tools</li>
+              <li>To help women reconnect with their inner power</li>
+              <li>To build a community rooted in compassion and growth</li>
+            </ul>
+          </div>
         </div>
       </section>
 

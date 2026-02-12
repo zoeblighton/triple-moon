@@ -109,6 +109,7 @@ export default function Layout({ children, showContact = true }) {
           <Link to="/#offerings">Offerings</Link>
           <Link to="/#events">Events</Link>
           <Link to="/#contact">Contact</Link>
+          <Link to="/#resources">Resources</Link>
         </div>
       </footer>
     </div>
