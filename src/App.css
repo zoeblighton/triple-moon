@@ -194,9 +194,10 @@ p {
 }
 
 .brandTag {
-  font-size: 13px;
+  font-size: 16px;
   color: var(--muted);
   margin-top: 2px;
+  color: #4b3d15;
 }
 
 .nav {
@@ -453,6 +454,65 @@ p {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.offeringsWrap {
+  position: relative;
+}
+
+.offeringsRow {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(360px, 320px); /* card width */
+  gap: 16px;
+
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 16px;
+  padding: 8px 4px 12px;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Each card snaps neatly */
+.offeringCard {
+  scroll-snap-align: start;
+}
+
+/* Hide scrollbar (optional) */
+.offeringsRow::-webkit-scrollbar {
+  height: 8px;
+}
+.offeringsRow::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+}
+
+/* Buttons */
+.scrollerControls {
+  display: flex;
+  gap: 8px;
+}
+
+.scrollBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.scrollBtn:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 .card {

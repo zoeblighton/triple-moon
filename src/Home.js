@@ -5,6 +5,23 @@ import Layout from "./Layout";
 import ContactSection from "./Contact";
 
 export default function Home() {
+  const offeringsRef = useRef(null);
+
+  const scrollOfferings = (direction) => {
+    const el = offeringsRef.current;
+    if (!el) return;
+
+    const card = el.querySelector(".offeringCard");
+    const cardWidth = card ? card.getBoundingClientRect().width : 320;
+    const gap = 16;
+    const amount = (cardWidth + gap) * direction;
+
+    el.scrollBy({
+      left: amount,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <Layout showContact={false}>
       <section className="hero">
