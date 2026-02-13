@@ -12,6 +12,7 @@
 
   --shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
   --radius: 18px;
+  --aside-rail: 420px;
 }
 
 * {
@@ -195,7 +196,6 @@ p {
 
 .brandTag {
   font-size: 16px;
-  color: var(--muted);
   margin-top: 2px;
   color: #4b3d15;
 }
@@ -219,12 +219,16 @@ p {
   color: #0b0a10;
 }
 
+/* Hero */
 .hero {
   margin-top: 22px;
   padding: clamp(22px, 3.5vw, 40px);
   border-radius: 8px;
-
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.hero:hover {
+  box-shadow: none;
 }
 
 .hero h1 {
@@ -276,6 +280,7 @@ p {
 .heroList li {
   margin: 8px 0;
 }
+
 .heroGrid {
   display: grid;
   gap: 18px;
@@ -283,22 +288,22 @@ p {
   grid-template-columns: 1.35fr 0.9fr;
 }
 
-.heroMain {
-  min-width: 0;
-}
-
+.heroMain,
 .heroAside {
   min-width: 0;
 }
+
 .heroAside .heroCard {
   margin-top: 0;
 }
+
 @media (max-width: 900px) {
   .heroGrid {
     grid-template-columns: 1fr;
   }
 }
 
+/* Photo marquee */
 .photoMarquee {
   margin-top: 14px;
   overflow: hidden;
@@ -341,6 +346,8 @@ p {
   flex: 0 0 auto;
   width: 180px;
   height: 180px;
+  border: solid 0.833px;
+  border-color: rgba(120, 145, 120, 0.35);
 }
 
 .photoTile img {
@@ -364,6 +371,7 @@ p {
     animation: none;
   }
 }
+
 @media (max-width: 600px) {
   .photoTile {
     aspect-ratio: 16 / 9;
@@ -379,21 +387,30 @@ p {
   }
 }
 
+/* Sections */
 .section {
   padding-top: clamp(28px, 5vw, 42px);
 }
 
 .sectionHeader {
   margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
+/* About */
 .aboutGrid {
   display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+
+  grid-template-columns: 1fr var(--aside-rail);
+  align-items: start;
+  gap: 24px;
 }
 
 .aboutText {
+  min-width: 0;
   color: var(--muted);
   font-size: clamp(14px, 1.3vw, 15px);
 }
@@ -403,71 +420,32 @@ p {
   max-width: 65ch;
 }
 
-.aboutCard {
-  border-radius: 12px;
-  padding: clamp(18px, 2.4vw, 24px);
-
-  position: relative;
+/* ensures the aside never collapses into a strip */
+.aboutAside {
+  min-width: 320px;
+  font-size: clamp(14px, 1.2vw, 15px);
 }
 
-.aboutCard::before {
-  position: absolute;
-  top: 10px;
-  left: 12px;
-  right: 12px;
-  height: 2px;
-  border-radius: 999px;
-  background: linear-gradient(
-    90deg,
-    rgba(127, 159, 124, 0.7),
-    rgba(184, 167, 124, 0.55),
-    rgba(160, 106, 59, 0.45)
-  );
-  opacity: 0.6;
+@media (max-width: 900px) {
+  .aboutGrid,
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .aboutAside {
+    min-width: 0;
+  }
 }
 
-.aboutCard > *:first-child {
-  margin-top: 10px;
-}
-
-.aboutCard h3 {
-  margin: 6px 0 10px;
-  letter-spacing: 0.2px;
-}
-
-.aboutCard p,
-.aboutCard li {
-  color: var(--muted);
-}
-.aboutOwner {
-  display: grid;
-  place-items: center;
-}
-
-.aboutOwnerImg {
-  width: 260px;
-  height: 260px;
-  border-radius: 80px;
-  object-fit: cover;
-  outline-offset: 1px;
-  border: 1px solid rgba(120, 145, 120, 0.28);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
-  margin-bottom: 16px;
-}
-
+/* Generic grid */
 .grid {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
 }
 
-.sectionHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
+/* Offerings row */
 .offeringsWrap {
   position: relative;
 }
@@ -475,7 +453,7 @@ p {
 .offeringsRow {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: minmax(360px, 320px); /* card width */
+  grid-auto-columns: minmax(360px, 320px);
   gap: 16px;
 
   overflow-x: auto;
@@ -487,12 +465,10 @@ p {
   -webkit-overflow-scrolling: touch;
 }
 
-/* Each card snaps neatly */
 .offeringCard {
   scroll-snap-align: start;
 }
 
-/* Hide scrollbar (optional) */
 .offeringsRow::-webkit-scrollbar {
   height: 8px;
 }
@@ -500,7 +476,7 @@ p {
   border-radius: 999px;
 }
 
-/* Buttons */
+/* Scroller buttons */
 .scrollerControls {
   display: flex;
   gap: 8px;
@@ -520,6 +496,7 @@ p {
   outline-offset: 2px;
 }
 
+/* Card */
 .card {
   border: 1px solid var(--border);
   background:
@@ -559,6 +536,7 @@ p {
   max-width: 65ch;
 }
 
+/* Bullets */
 .bullets {
   margin: 0;
   padding-left: 18px;
@@ -569,6 +547,7 @@ p {
   margin: 6px 0;
 }
 
+/* Pill */
 .pill {
   display: inline-flex;
   font-size: 12px;
@@ -580,6 +559,7 @@ p {
   margin-bottom: 8px;
 }
 
+/* Buttons */
 .button {
   display: inline-flex;
   align-items: center;
@@ -599,6 +579,7 @@ p {
     background 0.15s ease;
   min-height: 42px;
 }
+
 .button:hover {
   transform: translateY(-1px);
   background: rgba(127, 159, 124, 0.22);
@@ -609,12 +590,14 @@ p {
   border: 1px solid rgba(120, 145, 120, 0.28);
 }
 
+/* Contact */
 .contactRow {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   padding: 10px 0 0;
 }
+
 .iconButton {
   display: inline-flex;
   align-items: center;
@@ -672,14 +655,115 @@ p {
   opacity: 0.9;
 }
 
-.formStatus.ok {
-  font-weight: 600;
-}
-
+.formStatus.ok,
 .formStatus.bad {
   font-weight: 600;
 }
 
+/* Contact layout: form + aside */
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr var(--aside-rail);
+  gap: 24px;
+  align-items: start;
+  margin-top: 14px;
+}
+
+.contactFormCol {
+  min-width: 0;
+}
+
+.contactAside {
+  min-width: 320px;
+}
+
+/* Shared “aside card” look (About + Contact) */
+.aboutAside,
+.contactAside {
+  transform: none;
+  cursor: default;
+  position: relative;
+  padding: 20px 20px 18px;
+  min-width: 0; /* let the rail control width */
+  width: 100%;
+  background: #e8e6d700;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  border: 0px;
+}
+
+.aboutAside.card:hover,
+.contactAside.card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.aboutAside::before,
+.contactAside::before {
+  content: "";
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  width: 56px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(127, 159, 124, 0.7),
+    rgba(184, 167, 124, 0.55),
+    rgba(160, 106, 59, 0.45)
+  );
+  opacity: 0.55;
+}
+
+.aboutAsideTitle,
+.contactAsideTitle {
+  margin: 10px 0 12px;
+  font-size: 1.02rem;
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+}
+
+.aboutAsideBody,
+.aboutAsideBody p,
+.contactAsideBody,
+.contactAsideBody p {
+  margin: 0 0 12px;
+  line-height: 1.65;
+  color: var(--muted);
+}
+
+.contactAsideClosing {
+  margin-top: 14px;
+  font-style: italic;
+  color: var(--text);
+  opacity: 0.9;
+}
+
+/* Portrait sizing */
+.aboutAside .aboutOwnerImg {
+  width: 220px;
+  height: 220px;
+  border-radius: 40px;
+  margin-bottom: 12px;
+  border-right: 12px;
+  margin-left: 90px;
+  border: solid 0.833px;
+  border-color: rgba(120, 145, 120, 0.35);
+}
+
+@media (max-width: 900px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contactAside {
+    min-width: 0;
+  }
+}
+
+/* Footer */
 .footer {
   margin-top: 44px;
   padding: 18px 14px;
@@ -701,6 +785,7 @@ p {
   flex-wrap: wrap;
 }
 
+/* Mobile nav behaviour */
 @media (max-width: 900px) {
   .page {
     padding-right: clamp(78px, 14vw, 120px);
@@ -816,11 +901,6 @@ p {
   body.navOpen .nav a {
     font-size: 0;
     line-height: 0;
-  }
-
-  body.navOpen .nav a::after {
-    font-size: 14px;
-    line-height: 1.2;
   }
 
   body.navOpen .nav a::after {

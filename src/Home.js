@@ -196,6 +196,7 @@ export default function Home() {
           </article>
         </div>
       </section>
+
       <section id="about" className="section">
         <h2>Meet the magical Lou</h2>
 
@@ -244,37 +245,86 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="aboutCard aboutCard--vision">
-            <div className="aboutCardHead">
-              <div className="aboutOwner">
-                <img
-                  src="/images/portrait.jpg"
-                  alt="Lou, Triple Moon"
-                  className="aboutOwnerImg"
-                  loading="lazy"
-                />
-              </div>
-              <h3>
-                I am dedicated to creating a gentle, grounded space for women to
-                return to themselves:
-              </h3>
+          <aside className="card aboutAside" aria-label="Lou’s approach">
+            <div className="aboutOwner">
+              <img
+                src="/images/portrait.jpg"
+                alt="Lou, Triple Moon"
+                className="aboutOwnerImg"
+                loading="lazy"
+              />
             </div>
 
-            <ul className="aboutList">
-              <li>To create safe spaces for healing and self-discovery</li>
-              <li>To blend spiritual wisdom with practical life tools</li>
-              <li>To help women reconnect with their inner power</li>
-              <li>To build a community rooted in compassion and growth</li>
-            </ul>
-          </div>
+            <h3 className="aboutAsideTitle">
+              I’m here to create a gentle, grounded space for women to return to
+              themselves.
+            </h3>
+
+            <div className="aboutAsideBody">
+              <p>
+                Safe space for healing and self-discovery — without pressure to
+                perform.
+              </p>
+              <p>
+                Spiritual wisdom, held alongside practical tools for everyday
+                life.
+              </p>
+              <p>
+                Support to reconnect with your inner power, clarity, and calm.
+              </p>
+              <p>A community rooted in compassion, honesty, and growth.</p>
+            </div>
+          </aside>
         </div>
       </section>
 
       <section id="contact" className="section">
-        <h2>Book / Contact</h2>
-        <p className="muted">
-          <ContactSection />
-        </p>
+        <div className="sectionHeader">
+          <h2>Book / Contact</h2>
+        </div>
+
+        <div className="contactGrid">
+          <div className="contactFormCol">
+            <ContactSection />
+          </div>
+
+          <aside
+            className="card contactAside"
+            aria-label="Reaching out reassurance"
+          >
+            <h3 className="contactAsideTitle">
+              You Don’t Have To Have It All Figured Out
+            </h3>
+
+            <div className="contactAsideBody">
+              <p>
+                You don’t need to know exactly what you’re looking for before
+                you reach out.
+                <br />
+                You don’t need to be “spiritual enough.”
+                <br />
+                You don’t need to be in crisis.
+              </p>
+
+              <p>
+                Many of the women who come into this space simply feel they’re
+                ready for more connection, more clarity, more support.
+              </p>
+
+              <p>If that’s you, you’re welcome here.</p>
+
+              <p>
+                Reaching out doesn’t commit you to anything.
+                <br />
+                It simply opens a conversation.
+              </p>
+
+              <p className="contactAsideClosing">
+                And sometimes, that’s where everything begins.
+              </p>
+            </div>
+          </aside>
+        </div>
       </section>
     </Layout>
   );
