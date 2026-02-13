@@ -364,6 +364,11 @@ p {
     animation: none;
   }
 }
+@media (max-width: 600px) {
+  .photoTile {
+    aspect-ratio: 16 / 9;
+  }
+}
 
 @media (max-width: 560px) {
   .photoTile {

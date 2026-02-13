@@ -47,7 +47,6 @@ export default function Home() {
               {[
                 "/images/flowers.jpg",
                 "/images/altar.jpg",
-
                 "/images/promo.jpg",
                 "/images/drums.jpg",
                 "/images/altar2.jpg",
@@ -235,6 +234,7 @@ export default function Home() {
                   "/images/pretty.jpg",
                   "/images/roaming.jpg",
                   "/images/workshop4.jpg",
+                  "/images/portrait.jpg",
                 ].map((src, i) => (
                   <div className="photoTile" key={"a-" + src + i}>
                     <img src={src} alt="" loading="lazy" />
