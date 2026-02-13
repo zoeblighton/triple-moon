@@ -148,12 +148,16 @@ export default function Resources() {
           <div className="resourcesAZ" aria-label="A to Z navigation">
             {allLetters.map((l) => {
               const disabled = !grouped.map.has(l);
+
               return (
                 <a
                   key={l}
-                  href={disabled ? undefined : `#letter-${l}`}
+                  href={`#letter-${l}`}
                   className={`azLink ${disabled ? "isDisabled" : ""}`}
-                  onClick={(e) => disabled && e.preventDefault()}
+                  aria-disabled={disabled}
+                  onClick={(e) => {
+                    if (disabled) e.preventDefault();
+                  }}
                 >
                   {l}
                 </a>
