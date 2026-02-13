@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import ContactSection from "./Contact";
-import Resources from "./Resources";
 
 export default function Layout({ children, showContact = true }) {
   const [navOpen, setNavOpen] = useState(false);

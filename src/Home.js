@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout";
 import ContactSection from "./Contact";
