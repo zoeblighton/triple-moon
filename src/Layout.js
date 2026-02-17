@@ -6,46 +6,48 @@ import ContactSection from "./Contact";
 export default function Layout({ children, showContact = true }) {
   const [navOpen, setNavOpen] = useState(false);
   const navRef = useRef(null);
-
-  const isMobile = () => window.matchMedia("(max-width: 900px)").matches;
+  const btnRef = useRef(null);
 
   useEffect(() => {
-    if (navOpen) document.body.classList.add("navOpen");
-    else document.body.classList.remove("navOpen");
+    document.body.classList.toggle("navOpen", navOpen);
   }, [navOpen]);
 
+  // Close when clicking/tapping outside (ALL screen sizes)
   useEffect(() => {
     function onDocClick(e) {
-      if (!isMobile()) return;
       if (!navOpen) return;
-      if (navRef.current && navRef.current.contains(e.target)) return;
+
+      const navEl = navRef.current;
+      const btnEl = btnRef.current;
+
+      if (navEl && navEl.contains(e.target)) return;
+      if (btnEl && btnEl.contains(e.target)) return;
+
       setNavOpen(false);
     }
 
-    document.addEventListener("click", onDocClick);
-    return () => document.removeEventListener("click", onDocClick);
+    document.addEventListener("mousedown", onDocClick);
+    document.addEventListener("touchstart", onDocClick, { passive: true });
+
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("touchstart", onDocClick);
+    };
   }, [navOpen]);
 
+  // Close on Escape
   useEffect(() => {
-    function onResize() {
-      if (!isMobile()) setNavOpen(false);
+    function onKeyDown(e) {
+      if (e.key === "Escape") setNavOpen(false);
     }
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
   function handleNavClick(e) {
-    if (!isMobile()) return;
-
+    // If user clicks a link inside the open dropdown, close it
     const link = e.target.closest("a");
     if (!link) return;
-
-    if (!navOpen) {
-      e.preventDefault();
-      setNavOpen(true);
-      return;
-    }
-
     setNavOpen(false);
   }
 
@@ -73,20 +75,28 @@ export default function Layout({ children, showContact = true }) {
           </div>
         </div>
 
-        <nav ref={navRef} className="nav" onClick={handleNavClick}>
-          <Link to="/#offerings" data-label="Offerings">
-            Offerings
-          </Link>
-          <Link to="/#events" data-label="Events">
-            Events
-          </Link>
-          <Link to="/resources" data-label="Resources">
-            Resources
-          </Link>
-          <Link className="button" to="/#contact" data-label="Book / Contact">
-            Book / Contact
-          </Link>
-        </nav>
+        {/* NEW: menu button + dropdown wrapper */}
+        <div className="navWrap">
+          <button
+            ref={btnRef}
+            type="button"
+            className="navToggle"
+            aria-label={navOpen ? "Close menu" : "Open menu"}
+            aria-expanded={navOpen}
+            onClick={() => setNavOpen((v) => !v)}
+          >
+            <span className="navToggleBars" aria-hidden="true" />
+          </button>
+
+          <nav ref={navRef} className="nav" onClick={handleNavClick}>
+            <Link to="/#offerings">Offerings</Link>
+            <Link to="/#events">Events</Link>
+            <Link to="/resources">Resources</Link>
+            <Link className="button" to="/#contact">
+              Book / Contact
+            </Link>
+          </nav>
+        </div>
       </header>
 
       <main id="scrollRoot">
@@ -108,7 +118,7 @@ export default function Layout({ children, showContact = true }) {
           <Link to="/#offerings">Offerings</Link>
           <Link to="/#events">Events</Link>
           <Link to="/#contact">Contact</Link>
-          <Link to="/#resources">Resources</Link>
+          <Link to="/Resources">Resources</Link>
         </div>
       </footer>
     </div>
