@@ -18,7 +18,12 @@
 * {
   box-sizing: border-box;
 }
-
+@media (max-width: 700px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
 html,
 body {
   height: 100%;
@@ -303,6 +308,28 @@ p {
   }
 }
 
+/* Always square tiles */
+.photoTile {
+  aspect-ratio: 1 / 1;
+  height: auto;
+}
+
+/* Image fills tile */
+.photoTile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-height: 220px;
+}
+
+/* Smaller tiles on tiny phones */
+@media (max-width: 560px) {
+  .photoTile {
+    width: 160px;
+  }
+}
+
 /* Photo marquee */
 .photoMarquee {
   margin-top: 14px;
@@ -330,31 +357,17 @@ p {
   display: flex;
   gap: 10px;
   width: max-content;
+  max-height: 230px;
   animation: photoScroll 32s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .photoTrack {
+    animation: none;
+  }
 }
 
 .photoMarquee:hover .photoTrack {
   animation-play-state: paused;
-}
-
-.photoTile {
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(120, 145, 120, 0.22);
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
-  flex: 0 0 auto;
-  width: 180px;
-  height: 180px;
-  border: solid 0.833px;
-  border-color: rgba(120, 145, 120, 0.35);
-}
-
-.photoTile img {
-  display: block;
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
 }
 
 @keyframes photoScroll {
@@ -363,27 +376,6 @@ p {
   }
   to {
     transform: translateX(-50%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .photoTrack {
-    animation: none;
-  }
-}
-
-@media (max-width: 600px) {
-  .photoTile {
-    aspect-ratio: 16 / 9;
-  }
-}
-
-@media (max-width: 560px) {
-  .photoTile {
-    width: 160px;
-  }
-  .photoTile img {
-    height: 120px;
   }
 }
 
