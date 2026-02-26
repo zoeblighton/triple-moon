@@ -153,7 +153,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="events" className="section">
+      <section id="upcoming" className="section">
         <div className="sectionHeader">
           <h2>Upcoming events</h2>
           <p className="muted">
@@ -163,36 +163,74 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid">
-          <article className="card">
-            <div className="pill">Circle</div>
-            <h3>Women’s New Moon Gathering</h3>
-            <p className="muted">Date TBC • Brightlingsea</p>
-            <p>
-              Intentions, grounding meditation, and a simple ritual to reset for
-              the month.
-            </p>
-          </article>
+        <div className="upcomingEvents">
+          <article className="eventInfo">
+            <h3>The Joy Of Crystals</h3>
 
-          <article className="card">
-            <div className="pill">Crystal Workshop</div>
-            <h3>Crystal Energy Foundations</h3>
-            <p className="muted">Date TBC • Brightlingsea</p>
+            <p className="muted">Monday 30th March (2-5pm) • Brightlingsea</p>
             <p>
-              Learn how to choose, cleanse, and work with crystals in everyday
-              life.
+              Come and join us on Monday 30th March for a magical session
+              exploring crystals and the act of crystal healing. Priced at £30
+              pp, secure your space now by contacting me.{" "}
             </p>
+            <ul className="bullets">
+              <li>Discovering crystals and their properties.</li>
+              <li>Learning about crystal chakra associations.</li>
+              <li>Making a crystal healing dowser.</li>
+              <li>Crystal meditation and energy work.</li>
+            </ul>
+            <Link className="button" to="/#contact">
+              Book now
+            </Link>
           </article>
+          <br />
 
-          <article className="card">
-            <div className="pill">Ostara Workshop</div>
-            <h3>Celebrate the Spring Equinox</h3>
-            <p className="muted">Date TBC • Brightlingsea</p>
+          <article className="eventInfo">
+            <h3>Magical May - Belthane</h3>
+
+            <p className="muted">Sunday 26th April (2-5pm) • Brightlingsea</p>
             <p>
-              Join me for the festival of balance, rebirth, and new beginnings.
-              We’ll explore seasonal symbolism, set intentions for the months
-              ahead, and get creative with a spring craft.
+              Celebrate the blossoming energy of spring with our Belthane
+              workshop on Sunday 26th April. Join us for an afternoon of ritual,
+              intention setting, and seasonal wisdom to connect with the vibrant
+              energy of the season. Priced at £30 pp, secure your space now by
+              contacting me.
             </p>
+            <ul className="bullets">
+              <li>Guided ritual to connect with the energy of Belthane.</li>
+              <li>
+                Practical tools to work with the blossoming energy of spring.
+              </li>
+              <li>
+                Symbolism, myth, and spellcraft traditions associated with
+                Belthane.
+              </li>
+            </ul>
+            <Link className="button" to="/#contact">
+              Book now
+            </Link>
+          </article>
+          <br />
+          <article className="eventInfo">
+            <h3>Summer Drummer</h3>
+
+            <p className="muted">Friday 24th July (7-10pm) • Brightlingsea</p>
+            <p>
+              Drumming session to celebrate the height of summer, with Dan from{" "}
+              <a
+                href="https://dansaltdog.tripod.com/drumsome/id11.html"
+                target="_blank"
+              >
+                Drumsome
+              </a>
+              . Weather permitting, we will light a firepit at sunset. This is a
+              social event opposed to a workshop, drums will be provided but
+              feel free to bring your own if you have one! Tickets are £18,
+              contact me to book your space.
+            </p>
+            <Link className="button" to="/#contact">
+              Book now
+            </Link>
           </article>
         </div>
       </section>
@@ -244,37 +282,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <aside className="card aboutAside" aria-label="Lou’s approach">
-            <div className="aboutOwner">
-              <img
-                src="/images/portrait.jpg"
-                alt="Lou, Triple Moon"
-                className="aboutOwnerImg"
-                loading="lazy"
-              />
-            </div>
-
-            <h3 className="aboutAsideTitle">
-              I’m here to create a gentle, grounded space for women to return to
-              themselves.
-            </h3>
-
-            <div className="aboutAsideBody">
-              <p>
-                Safe space for healing and self-discovery — without pressure to
-                perform.
-              </p>
-              <p>
-                Spiritual wisdom, held alongside practical tools for everyday
-                life.
-              </p>
-              <p>
-                Support to reconnect with your inner power, clarity, and calm.
-              </p>
-              <p>A community rooted in compassion, honesty, and growth.</p>
-            </div>
-          </aside>
         </div>
       </section>
 
