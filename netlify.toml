@@ -1,0 +1,17 @@
+[[redirects]]
+from = "http://triplemoon.co.uk/*"
+to = "https://triplemoon.co.uk/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://www.triplemoon.co.uk/*"
+to = "https://triplemoon.co.uk/:splat"
+status = 301
+force = true
+
+[[redirects]]
+from = "https://triplemoon.netlify.app/*"
+to = "https://triplemoon.co.uk/:splat"
+status = 301
+force = true

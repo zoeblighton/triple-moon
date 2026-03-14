@@ -12,7 +12,6 @@ export default function Layout({ children, showContact = true }) {
     document.body.classList.toggle("navOpen", navOpen);
   }, [navOpen]);
 
-  // Close when clicking/tapping outside (ALL screen sizes)
   useEffect(() => {
     function onDocClick(e) {
       if (!navOpen) return;
@@ -113,7 +112,17 @@ export default function Layout({ children, showContact = true }) {
       </main>
 
       <footer className="footer">
-        <div className="muted">© {new Date().getFullYear()} Triple Moon</div>
+        <div className="muted">
+          © {new Date().getFullYear()} Triple Moon coded by{" "}
+          <a
+            href="https://www.linkedin.com/in/zoe-blighton-a26087347"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Zoe Blighton
+          </a>{" "}
+          hosted on Netlify{" "}
+        </div>
         <div className="footerLinks">
           <Link to="/#offerings">Offerings</Link>
           <Link to="/#events">Events</Link>
