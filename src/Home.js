@@ -4,6 +4,56 @@ import "./App.css";
 import Layout from "./Layout";
 import ContactSection from "./Contact";
 
+function PhotoMarquee({ images }) {
+  const marqueeRef = useRef(null);
+  const isDown = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const onPointerDown = (e) => {
+    const el = marqueeRef.current;
+    if (!el) return;
+
+    isDown.current = true;
+    startX.current = e.pageX - el.offsetLeft;
+    scrollLeft.current = el.scrollLeft;
+  };
+
+  const onPointerMove = (e) => {
+    const el = marqueeRef.current;
+    if (!el || !isDown.current) return;
+
+    const x = e.pageX - el.offsetLeft;
+    const walk = x - startX.current;
+    el.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const endDrag = () => {
+    isDown.current = false;
+  };
+
+  return (
+    <div
+      ref={marqueeRef}
+      className="photoMarquee"
+      aria-label="Gallery preview"
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={endDrag}
+      onPointerLeave={endDrag}
+      onPointerCancel={endDrag}
+    >
+      <div className="photoTrack">
+        {images.map((src, i) => (
+          <div className="photoTile" key={"a-" + src + i}>
+            <img src={src} alt="" loading="lazy" draggable="false" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   const offeringsRef = useRef(null);
 
@@ -41,22 +91,15 @@ export default function Home() {
               See upcoming events
             </Link>
           </div>
-
-          <div className="photoMarquee" aria-label="Gallery preview">
-            <div className="photoTrack">
-              {[
-                "/images/flowers.jpg",
-                "/images/altar.jpg",
-                "/images/promo.jpg",
-                "/images/drums.jpg",
-                "/images/altar2.jpg",
-              ].map((src, i) => (
-                <div className="photoTile" key={"a-" + src + i}>
-                  <img src={src} alt="" loading="lazy" />
-                </div>
-              ))}
-            </div>
-          </div>
+          <PhotoMarquee
+            images={[
+              "/images/flowers.jpg",
+              "/images/altar.jpg",
+              "/images/promo.jpg",
+              "/images/drums.jpg",
+              "/images/altar2.jpg",
+            ]}
+          />
         </div>
       </section>
 
@@ -64,7 +107,6 @@ export default function Home() {
         <div className="sectionHeader">
           <h2>Offerings</h2>
 
-          {/* On-page scroller */}
           <div
             className="scrollerControls"
             aria-label="Offerings scroller controls"
@@ -263,24 +305,18 @@ export default function Home() {
               feel empowered, supported, and at home in your own life.
             </p>
 
-            <div className="photoMarquee" aria-label="Gallery preview">
-              <div className="photoTrack">
-                {[
-                  "/images/lou-groovy.jpg",
-                  "/images/lou-field.jpg",
-                  "/images/happy-lou.jpg",
-                  "/images/tree-hugger.jpg",
-                  "/images/pretty.jpg",
-                  "/images/roaming.jpg",
-                  "/images/workshop4.jpg",
-                  "/images/portrait.jpg",
-                ].map((src, i) => (
-                  <div className="photoTile" key={"a-" + src + i}>
-                    <img src={src} alt="" loading="lazy" />
-                  </div>
-                ))}
-              </div>
-            </div>
+            <PhotoMarquee
+              images={[
+                "/images/lou-groovy.jpg",
+                "/images/lou-field.jpg",
+                "/images/happy-lou.jpg",
+                "/images/tree-hugger.jpg",
+                "/images/pretty.jpg",
+                "/images/roaming.jpg",
+                "/images/workshop4.jpg",
+                "/images/portrait.jpg",
+              ]}
+            />
           </div>
         </div>
       </section>

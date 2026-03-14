@@ -289,49 +289,71 @@ p {
   }
 }
 
-/* Always square tiles */
 .photoTile {
   aspect-ratio: 1 / 1;
-  height: auto;
+  width: 220px;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
 }
 
-/* Image fills tile */
 .photoTile img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
   max-height: 220px;
+  user-select: none;
+  -webkit-user-drag: none;
+  transform: scale(1.04);
+  transition: transform 0.3s ease;
+}
+.photoTile:hover img {
+  transform: scale(1.05);
 }
 
-/* Smaller tiles on tiny phones */
 @media (max-width: 560px) {
   .photoTile {
     width: 160px;
   }
 }
 
-/* Photo marquee */
 .photoMarquee {
   margin-top: 14px;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
   border-radius: 8px;
   position: relative;
+  cursor: grab;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  scroll-snap-type: x mandatory;
 
   -webkit-mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    black 10%,
-    black 90%,
+    to right,
+    transparent 0px,
+    black 40px,
+    black calc(100% - 40px),
     transparent 100%
   );
   mask-image: linear-gradient(
-    90deg,
-    transparent 0%,
-    black 10%,
-    black 90%,
+    to right,
+    transparent 0px,
+    black 40px,
+    black calc(100% - 40px),
     transparent 100%
   );
+
+  scrollbar-width: none;
+}
+
+.photoMarquee::-webkit-scrollbar {
+  display: none;
+}
+
+.photoMarquee:active {
+  cursor: grabbing;
 }
 
 .photoTrack {
@@ -339,7 +361,7 @@ p {
   gap: 10px;
   width: max-content;
   max-height: 230px;
-  animation: photoScroll 32s linear infinite;
+  padding-inline: 40px;
 }
 @media (prefers-reduced-motion: reduce) {
   .photoTrack {
@@ -347,20 +369,9 @@ p {
   }
 }
 
-.photoMarquee:hover .photoTrack {
-  animation-play-state: paused;
+.photoMarquee {
+  -webkit-overflow-scrolling: touch;
 }
-
-@keyframes photoScroll {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-/* Sections */
 .section {
   padding-top: clamp(28px, 5vw, 42px);
 }
