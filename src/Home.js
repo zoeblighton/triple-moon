@@ -262,6 +262,7 @@ export default function Home() {
               <a
                 href="https://dansaltdog.tripod.com/drumsome/id11.html"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 Drumsome
               </a>
