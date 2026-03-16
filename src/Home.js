@@ -79,9 +79,13 @@ export default function Home() {
           <div className="heroMain">
             <h1>Come home to yourself</h1>
             <p>
-              Celebrate the magic that enriches the beauty of life. Spiritual
-              wellness, crystal & energy work, meditation, and grounded life
-              coaching. For women who want clarity, calm, and aligned change.
+              I am a crystal healer, reiki practitioner, life coach and follower
+              of the "old ways", here at Triplemoon my mission is to bring some
+              magic to the mundane. <br /> <br /> We live in interesting times
+              and while the world moves with increasing speed I encourage you to
+              buckle up, seek out your people and find your peace. <br /> <br />{" "}
+              This site is a window into the world of the triplemoon tribe, for
+              further information get in touch below.
             </p>
 
             <Link className="button" to="/#contact">
@@ -138,7 +142,7 @@ export default function Home() {
             aria-label="Offerings horizontal list"
           >
             <Link to="./SabbatWorkshops" className="card cardLink offeringCard">
-              <h3>Sabbat Workshops</h3>
+              <h3>Cyclical Living Workshops</h3>
               <p>
                 Group workshops aligned with the Wheel of the Year — ritual,
                 intention, and seasonal wisdom.
@@ -197,24 +201,29 @@ export default function Home() {
 
       <section id="upcoming" className="section">
         <div className="sectionHeader">
-          <h2>Upcoming events</h2>
+          <h2>Living Magically Workshops</h2>
           <p className="muted">
-            Join me for upcoming workshops, limited spaces avaliable to ensure
-            intimate classes. Register your interest below to be the first to
-            know when new dates are released.
+            If you want to host your own magical occasion, we will bring the
+            magic to you. Minimum of 6 per group, contact for details.
           </p>
+          <p>
+            We can deliver all of the following packages to you and your tribe.
+            An intimate learning opportunity for you and your people to connect
+            in a magical way.
+          </p>
+          <p>Workshops can be tailored to your needs and the season.</p>
         </div>
 
         <div className="upcomingEvents">
           <article className="eventInfo">
             <h3>The Joy Of Crystals</h3>
 
-            <p className="muted">Monday 30th March (2-5pm) • Brightlingsea</p>
             <p>
-              Come and join us on Monday 30th March for a magical session
-              exploring crystals and the act of crystal healing. Priced at £30
-              pp, secure your space now by contacting me.{" "}
+              If you love crystals, why not host a joy of crystals workshop for
+              groups of 6 minimum, in the comfort of your home or chosen
+              venue.{" "}
             </p>
+            <h2>The workshop can include </h2>
             <ul className="bullets">
               <li>Discovering crystals and their properties.</li>
               <li>Learning about crystal chakra associations.</li>
@@ -222,7 +231,7 @@ export default function Home() {
               <li>Crystal meditation and energy work.</li>
             </ul>
             <Link className="button" to="/#contact">
-              Book now
+              Enquire now
             </Link>
           </article>
           <br />
@@ -230,13 +239,10 @@ export default function Home() {
           <article className="eventInfo">
             <h3>Magical May - Belthane</h3>
 
-            <p className="muted">Sunday 26th April (2-5pm) • Brightlingsea</p>
             <p>
               Celebrate the blossoming energy of spring with our Belthane
-              workshop on Sunday 26th April. Join us for an afternoon of ritual,
-              intention setting, and seasonal wisdom to connect with the vibrant
-              energy of the season. Priced at £30 pp, secure your space now by
-              contacting me.
+              workshop. Host an afternoon of ritual, intention setting, and
+              seasonal wisdom to connect with the vibrant energy of the season.
             </p>
             <ul className="bullets">
               <li>Guided ritual to connect with the energy of Belthane.</li>
@@ -249,32 +255,10 @@ export default function Home() {
               </li>
             </ul>
             <Link className="button" to="/#contact">
-              Book now
+              Enquire now
             </Link>
           </article>
           <br />
-          <article className="eventInfo">
-            <h3>Summer Drummer</h3>
-
-            <p className="muted">Friday 24th July (7-10pm) • Brightlingsea</p>
-            <p>
-              Drumming session to celebrate the height of summer, with Dan from{" "}
-              <a
-                href="https://dansaltdog.tripod.com/drumsome/id11.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Drumsome
-              </a>
-              . Weather permitting, we will light a firepit at sunset. This is a
-              social event opposed to a workshop, drums will be provided but
-              feel free to bring your own if you have one! Tickets are £18,
-              contact me to book your space.
-            </p>
-            <Link className="button" to="/#contact">
-              Book now
-            </Link>
-          </article>
         </div>
       </section>
 
