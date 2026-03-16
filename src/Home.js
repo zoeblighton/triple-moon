@@ -87,6 +87,11 @@ export default function Home() {
               This site is a window into the world of the triplemoon tribe, for
               further information get in touch below.
             </p>
+            <p>
+              {" "}
+              If you want to host your own magical occasion, we will bring the
+              magic to you. Minimum of 6 people required for each workshop.
+            </p>
 
             <Link className="button" to="/#contact">
               Work with me
@@ -223,12 +228,13 @@ export default function Home() {
               groups of 6 minimum, in the comfort of your home or chosen
               venue.{" "}
             </p>
-            <h2>The workshop can include </h2>
+            <h2>The workshop includes:</h2>
             <ul className="bullets">
               <li>Discovering crystals and their properties.</li>
               <li>Learning about crystal chakra associations.</li>
               <li>Making a crystal healing dowser.</li>
               <li>Crystal meditation and energy work.</li>
+              <li>Crystal healing demonstration.</li>
             </ul>
             <Link className="button" to="/#contact">
               Enquire now
@@ -267,29 +273,6 @@ export default function Home() {
 
         <div className="aboutGrid">
           <div className="aboutText">
-            <p>
-              Hi, I’m <strong>Lou</strong> — a spiritual wellness coach,
-              meditation practitioner, and crystal & energy worker. I created
-              Triple Moon as a space for women who are seeking clarity,
-              connection, and a deeper relationship with themselves and the
-              earth.
-            </p>
-
-            <p>
-              My work blends grounded life coaching with spiritual practices
-              such as meditation, ritual, and crystal energy. I believe true
-              healing happens when the mind, body, and spirit are supported
-              together, not separately.
-            </p>
-
-            <p>
-              Triple Moon was born from a vision of community and sacred space:
-              a place where women can gather, be seen, and grow into the most
-              aligned version of themselves. Whether through 1:1 coaching, group
-              circles, or events, my intention is always the same: to help you
-              feel empowered, supported, and at home in your own life.
-            </p>
-
             <PhotoMarquee
               images={[
                 "/images/lou-groovy.jpg",
