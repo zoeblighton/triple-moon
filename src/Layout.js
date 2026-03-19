@@ -34,7 +34,6 @@ export default function Layout({ children, showContact = true }) {
     };
   }, [navOpen]);
 
-  // Close on Escape
   useEffect(() => {
     function onKeyDown(e) {
       if (e.key === "Escape") setNavOpen(false);
@@ -44,7 +43,6 @@ export default function Layout({ children, showContact = true }) {
   }, []);
 
   function handleNavClick(e) {
-    // If user clicks a link inside the open dropdown, close it
     const link = e.target.closest("a");
     if (!link) return;
     setNavOpen(false);
@@ -74,7 +72,6 @@ export default function Layout({ children, showContact = true }) {
           </div>
         </div>
 
-        {/* NEW: menu button + dropdown wrapper */}
         <div className="navWrap">
           <button
             ref={btnRef}
@@ -89,7 +86,7 @@ export default function Layout({ children, showContact = true }) {
 
           <nav ref={navRef} className="nav" onClick={handleNavClick}>
             <Link to="/#offerings">Offerings</Link>
-            <Link to="/#events">Events</Link>
+
             <Link to="/resources">Resources</Link>
             <Link className="button" to="/#contact">
               Book / Contact
@@ -97,7 +94,6 @@ export default function Layout({ children, showContact = true }) {
           </nav>
         </div>
       </header>
-
       <main id="scrollRoot">
         {children}
 
@@ -125,9 +121,8 @@ export default function Layout({ children, showContact = true }) {
         </div>
         <div className="footerLinks">
           <Link to="/#offerings">Offerings</Link>
-          <Link to="/#events">Events</Link>
           <Link to="/#contact">Contact</Link>
-          <Link to="/Resources">Resources</Link>
+          <Link to="/resources">Resources</Link>
         </div>
       </footer>
     </div>

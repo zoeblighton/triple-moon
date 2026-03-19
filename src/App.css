@@ -205,7 +205,6 @@ p {
   color: #4b3d15;
 }
 
-/* Hero */
 .hero {
   margin-top: 22px;
   padding: clamp(22px, 3.5vw, 40px);
@@ -227,7 +226,7 @@ p {
 
 .hero p {
   margin: 0 0 18px;
-  max-width: 70ch;
+  text-align: justify;
   color: var(--muted);
   font-size: clamp(15px, 1.35vw, 16px);
 }
@@ -267,26 +266,12 @@ p {
   margin: 8px 0;
 }
 
-.heroGrid {
-  display: grid;
-  gap: 18px;
-  align-items: start;
-  grid-template-columns: 1.35fr 0.9fr;
-}
-
-.heroMain,
-.heroAside {
+.heroMain {
   min-width: 0;
 }
 
-.heroAside .heroCard {
+.heroCard {
   margin-top: 0;
-}
-
-@media (max-width: 900px) {
-  .heroGrid {
-    grid-template-columns: 1fr;
-  }
 }
 
 .photoTile {
@@ -384,7 +369,6 @@ p {
   gap: 12px;
 }
 
-/* About */
 .aboutGrid {
   display: grid;
 
@@ -404,7 +388,6 @@ p {
   max-width: 65ch;
 }
 
-/* ensures the aside never collapses into a strip */
 .aboutAside {
   min-width: 320px;
   font-size: clamp(14px, 1.2vw, 15px);
@@ -422,14 +405,12 @@ p {
   }
 }
 
-/* Generic grid */
 .grid {
   display: grid;
   gap: 14px;
   grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
 }
 
-/* Offerings row */
 .offeringsWrap {
   position: relative;
 }
@@ -460,7 +441,6 @@ p {
   border-radius: 999px;
 }
 
-/* Scroller buttons */
 .scrollerControls {
   display: flex;
   gap: 8px;
@@ -480,7 +460,6 @@ p {
   outline-offset: 2px;
 }
 
-/* Card */
 .card {
   border: 1px solid var(--border);
   background:
@@ -520,7 +499,6 @@ p {
   max-width: 65ch;
 }
 
-/* Bullets */
 .bullets {
   margin: 0;
   padding-left: 18px;
@@ -531,7 +509,6 @@ p {
   margin: 6px 0;
 }
 
-/* Pill */
 .pill {
   display: inline-flex;
   font-size: 12px;
@@ -543,7 +520,6 @@ p {
   margin-bottom: 8px;
 }
 
-/* Buttons */
 .button {
   display: inline-flex;
   align-items: center;
@@ -574,7 +550,6 @@ p {
   border: 1px solid rgba(120, 145, 120, 0.28);
 }
 
-/* Contact */
 .contactRow {
   display: flex;
   gap: 12px;
@@ -644,7 +619,6 @@ p {
   font-weight: 600;
 }
 
-/* Contact layout: form + aside */
 .contactGrid {
   display: grid;
   grid-template-columns: 1fr var(--aside-rail);
@@ -661,14 +635,13 @@ p {
   min-width: 320px;
 }
 
-/* Shared “aside card” look (About + Contact) */
 .aboutAside,
 .contactAside {
   transform: none;
   cursor: default;
   position: relative;
   padding: 20px 20px 18px;
-  min-width: 0; /* let the rail control width */
+  min-width: 0;
   width: 100%;
   background: #e8e6d700;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
@@ -724,7 +697,6 @@ p {
   opacity: 0.9;
 }
 
-/* Portrait sizing */
 .aboutAside .aboutOwnerImg {
   width: 220px;
   height: 220px;
@@ -747,7 +719,6 @@ p {
   }
 }
 
-/* Footer */
 .footer {
   margin-top: 44px;
   padding: 18px 14px;
@@ -769,14 +740,12 @@ p {
   flex-wrap: wrap;
 }
 
-/* Dropdown nav (desktop + mobile) */
 .navWrap {
   position: relative;
   display: flex;
   align-items: center;
 }
 
-/* Menu button */
 .navToggle {
   display: inline-flex;
   align-items: center;
@@ -823,7 +792,6 @@ p {
   color: var(--muted);
 }
 
-/* The dropdown itself */
 .nav {
   position: absolute;
   right: 0;
@@ -853,7 +821,6 @@ body.navOpen .nav {
   pointer-events: auto;
 }
 
-/* Dropdown links */
 .nav a {
   min-height: 44px;
   padding: 10px 12px;
@@ -865,16 +832,14 @@ body.navOpen .nav {
   align-items: center;
 }
 
-/* Your CTA link inside dropdown */
 .nav a.button {
-  margin: 0; /* IMPORTANT: your .button has margins */
+  margin: 0;
   justify-content: center;
   color: var(--text);
   background: rgba(127, 159, 124, 0.18);
   border-color: rgba(120, 145, 120, 0.35);
 }
 
-/* Optional overlay */
 body.navOpen::after {
   content: "";
   position: fixed;
@@ -903,4 +868,35 @@ body.navOpen::after {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+.gallerySection {
+  margin-bottom: 32px;
+}
+.gallerySection h2 {
+  margin-top: 32px;
+
+  margin-bottom: 32px;
+}
+.workshopInstaRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .workshopInstaRow {
+    grid-template-columns: 1fr;
+  }
+}
+.nextWorkshop {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 16px;
+}
+.reikiImage {
+  width: 100%;
+  border-radius: 16px;
+  -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
+  mask-image: radial-gradient(circle, black 70%, transparent 100%);
 }

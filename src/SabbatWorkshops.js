@@ -1,4 +1,5 @@
 import Layout from "./Layout";
+import InstagramFeed from "./InstagramFeed";
 
 export default function SabbatWorkshops() {
   return (
@@ -83,50 +84,74 @@ export default function SabbatWorkshops() {
               these transitions help us to understand our own transitions
               through life. Having these anchors in our ever-changing world,
               offers us the space to pause, reflect, to live with intention and
-              express gratitude. The Wheel of the Year is a relatively new
-              system that only really dates to the 1950s and it is not without
-              its problems. Many folk traditions in England have been lost over
-              the years for several reasons, including the invasion of the
-              Romans and the Reformation of the Church. Most of the names of the
-              festival days that are celebrated when following The Wheel of the
-              Year come from cultural backgrounds that include the Celtic
-              nations of Scotland, Wales, and Ireland. The wheel of the year is
-              always turning The Wheel of the Year features eight celebration
-              days. Four of these are specifically connected to the sun and the
-              amount of daylight we experience. These are the winter solstice
-              (known as Yule), spring equinox (Ostara), summer solstice (Litha)
-              and autumn equinox (Mabon). Between these are the four fire
-              festivals of Samhain (pronounced sah-win), Imbolc (pronounced
-              im-olc), Beltane, and Lammas. Each festival holds a unique
-              essence, and there is often an association with Gods and
-              Goddesses, trees, and folklore. Sadly, we have lost a lot of our
-              ancient traditions and the way we celebrate these festivals today
-              is based on a best guess about the ways our ancestors would have
-              followed and celebrated the agricultural year.
+              express gratitude.
+            </p>{" "}
+            <p>
+              {" "}
+              The Wheel of the Year is a relatively new system that only really
+              dates to the 1950s and it is not without its problems. Many folk
+              traditions in England have been lost over the years for several
+              reasons, including the invasion of the Romans and the Reformation
+              of the Church. Most of the names of the festival days that are
+              celebrated when following The Wheel of the Year come from cultural
+              backgrounds that include the Celtic nations of Scotland, Wales,
+              and Ireland.{" "}
+            </p>{" "}
+            <h3>
+              {" "}
+              The wheel of the year is always turning The Wheel of the Year
+              features eight celebration days. Four of these are specifically
+              connected to the sun and the amount of daylight we experience.
+            </h3>{" "}
+            <p>
+              These are the winter solstice (known as Yule), spring equinox
+              (Ostara), summer solstice (Litha) and autumn equinox (Mabon).
+              Between these are the four fire festivals of Samhain (pronounced
+              sah-win), Imbolc (pronounced im-olc), Beltane, and Lammas. Each
+              festival holds a unique essence, and there is often an association
+              with Gods and Goddesses, trees, and folklore. Sadly, we have lost
+              a lot of our ancient traditions and the way we celebrate these
+              festivals today is based on a best guess about the ways our
+              ancestors would have followed and celebrated the agricultural
+              year.
             </p>
           </article>
         </div>
 
-        <div className="galleryGrid">
-          <h2>Gallery</h2>
-          {[
-            "/images/workshop1.jpg",
-            "/images/workshop2.jpg",
-            "/images/workshop3.jpg",
-            "/images/workshop4.jpg",
-            "/images/workshop5.jpg",
-            "/images/workshop6.jpg",
-          ].map((src, i) => (
-            <div className="galleryItem" key={i}>
-              <img src={src} alt="" loading="lazy" />
-            </div>
-          ))}
-        </div>
+        <div className="workshopInstaRow">
+          <div
+            className="nextWorkshop"
+            aria-label="Next Cyclical Living Workshop details"
+          >
+            <h2>Want to know when we are celebrating next?</h2>
 
-        <section className="section">
-          <h2>Want to know when we are celebrating next?</h2>
-          <p className="muted">Get in touch below to join us.</p>
-        </section>
+            <h3>Magical May - Belthane</h3>
+
+            <p>
+              Celebrate the blossoming energy of spring with our Belthane
+              workshop.
+            </p>
+            <p>
+              Host an afternoon of ritual, intention setting, and seasonal
+              wisdom to connect with the vibrant energy of the season.
+            </p>
+
+            <ul className="bullets">
+              <li>Guided ritual to connect with the energy of Belthane.</li>
+              <li>
+                Practical tools to work with the blossoming energy of spring.
+              </li>
+              <li>
+                Symbolism, myth, and spellcraft traditions associated with
+                Belthane.
+              </li>
+            </ul>
+          </div>
+
+          <div className="instagramCol">
+            <InstagramFeed />
+          </div>
+        </div>
       </section>
     </Layout>
   );

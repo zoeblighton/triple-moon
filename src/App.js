@@ -6,6 +6,7 @@ import SabbatWorkshops from "./SabbatWorkshops";
 import EnchantedHen from "./EnchantedHen";
 import Resources from "./Resources";
 import EnergyCrystalSupport from "./EnergyCrystalSupport";
+import TheJoyOfCrystals from "./TheJoyOfCrystals";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/resources" element={<Resources />} />
       <Route path="/EnergyCrystalSupport" element={<EnergyCrystalSupport />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="TheJoyOfCrystals" element={<TheJoyOfCrystals />} />
     </Routes>
   );
 }

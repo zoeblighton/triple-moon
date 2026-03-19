@@ -59,10 +59,9 @@ export default function ContactSection() {
       <p className="muted">Send me a message below, or reach out on socials.</p>
 
       <div className="contactRow">
-        {/* Icon buttons */}
         <a
           className="iconButton"
-          href="mailto:hello@triplemoon.yourdomain"
+          href="mailto:louise.schenk@btinternet.com"
           aria-label="Email"
           title="Email"
         >
@@ -71,7 +70,7 @@ export default function ContactSection() {
 
         <a
           className="iconButton"
-          href="https://www.instagram.com/YOURUSERNAME"
+          href="https://www.instagram.com/triple.moon.healing/"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -82,7 +81,7 @@ export default function ContactSection() {
 
         <a
           className="iconButton"
-          href="https://www.facebook.com/YOURUSERNAME"
+          href="https://www.facebook.com/triplemoon.net"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
