@@ -268,8 +268,8 @@ export default function Home() {
             >
               <h3>Reiki, Energy & Crystal Support</h3>
               <p>
-                Ritual, intention setting, and crystal wisdom for energetic
-                clarity.
+                Reiki Seichem healing, crystal healing, and energetic support
+                for your well-being and personal growth.
               </p>
               <ul className="bullets">
                 <li>Energetic resets</li>
