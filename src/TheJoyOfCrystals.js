@@ -51,6 +51,7 @@ export default function TheJoyOfCrystals() {
           class="button"
           href="https://www.Thejoyofcrystals.com/"
           target="_blank"
+          rel="noreferrer"
         >
           Explore Resources
         </a>

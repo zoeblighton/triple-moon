@@ -8,6 +8,7 @@ export const resources = [
     uses: ["Tea", "Bath", "Bedtime ritual"],
     cautions: ["Avoid if allergic to ragweed family (Asteraceae)."],
   },
+
   {
     type: "Crystal",
     name: "Amethyst",
