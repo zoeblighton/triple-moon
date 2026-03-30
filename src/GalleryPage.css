@@ -1,0 +1,242 @@
+.galleryPage {
+  position: relative;
+  width: min(1100px, 100%);
+  margin-inline: auto;
+  padding-inline: clamp(14px, 3vw, 28px);
+  padding-block: clamp(16px, 3vw, 22px) clamp(44px, 6vw, 60px);
+}
+
+.galleryPageHeader {
+  text-align: center;
+  margin-bottom: 28px;
+  padding-top: 18px;
+}
+
+.galleryPageEyebrow {
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--accent3);
+  margin: 0 0 10px;
+  opacity: 0.8;
+}
+
+.galleryPageTitle {
+  margin: 0 0 10px;
+  font-size: clamp(32px, 4.2vw, 48px);
+  line-height: 1.06;
+  font-family: "IM Fell English", Georgia, serif;
+  letter-spacing: 0.3px;
+  color: var(--text);
+}
+
+.galleryPageSubtitle {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: clamp(15px, 1.35vw, 16px);
+  text-align: center;
+}
+
+.galleryFilterWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 24px 0 30px;
+}
+
+.galleryFilterButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(120, 145, 120, 0.35);
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.2px;
+  font-family: "Playfair Display", serif;
+  cursor: pointer;
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.2s ease;
+  min-height: 42px;
+}
+
+.galleryFilterButton:hover {
+  transform: translateY(-1px);
+  background: rgba(127, 159, 124, 0.18);
+}
+
+.galleryFilterButtonActive {
+  background: rgba(127, 159, 124, 0.22);
+  border-color: rgba(120, 145, 120, 0.45);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.08),
+    0 0 6px rgba(127, 160, 124, 0.16);
+}
+
+.galleryGrid {
+  margin-top: 16px;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.galleryCard {
+  border: 1px solid var(--border);
+  background:
+    radial-gradient(
+      600px 300px at 10% 0%,
+      rgba(127, 160, 124, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px 360px at 90% 20%,
+      rgba(184, 167, 124, 0.14),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.65);
+  border-radius: calc(var(--radius) + 4px);
+  overflow: hidden;
+  padding: 0;
+  text-align: left;
+  cursor: pointer;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  box-shadow: none;
+}
+
+.galleryCard:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.18),
+    0 0 6px rgba(127, 160, 124, 0.2);
+}
+
+.galleryCardImage {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.galleryCardContent {
+  padding: 14px 16px 16px;
+}
+
+.galleryCardCategory {
+  display: inline-flex;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 199, 158, 0.3);
+  background: rgba(127, 160, 124, 0.18);
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.galleryCardTitle {
+  margin: 0;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.2rem;
+  line-height: 1.25;
+  letter-spacing: 0.2px;
+  color: var(--text);
+}
+
+.galleryLightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(47, 59, 47, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 10000;
+  backdrop-filter: blur(3px);
+}
+
+.galleryLightboxContent {
+  position: relative;
+  width: min(900px, 100%);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) + 4px);
+  overflow: hidden;
+  background:
+    radial-gradient(
+      600px 300px at 10% 0%,
+      rgba(127, 160, 124, 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      600px 360px at 90% 20%,
+      rgba(184, 167, 124, 0.14),
+      transparent 60%
+    ),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.galleryLightboxClose {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 145, 120, 0.35);
+  background: rgba(255, 255, 255, 0.82);
+  color: var(--text);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.galleryLightboxImage {
+  width: 100%;
+  max-height: 75vh;
+  object-fit: cover;
+  display: block;
+}
+
+.galleryLightboxText {
+  padding: 18px 20px 22px;
+}
+
+.galleryLightboxTitle {
+  margin: 6px 0 0;
+  font-family: "IM Fell English", Georgia, serif;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+@media (max-width: 700px) {
+  .galleryPageHeader {
+    margin-bottom: 22px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
+  .galleryCardImage {
+    height: 220px;
+  }
+
+  .galleryLightbox {
+    padding: 14px;
+  }
+
+  .galleryLightboxText {
+    padding: 14px 16px 18px;
+  }
+}

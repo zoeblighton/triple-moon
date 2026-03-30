@@ -86,7 +86,7 @@ export default function Layout({ children, showContact = true }) {
 
           <nav ref={navRef} className="nav" onClick={handleNavClick}>
             <Link to="/#offerings">Offerings</Link>
-
+            <Link to="/gallerypage">Gallery</Link>
             <Link to="/resources">Resources</Link>
             <Link className="button" to="/#contact">
               Book / Contact
@@ -123,6 +123,7 @@ export default function Layout({ children, showContact = true }) {
           <Link to="/#offerings">Offerings</Link>
           <Link to="/#contact">Contact</Link>
           <Link to="/resources">Resources</Link>
+          <Link to="/gallerypage">Gallery</Link>
         </div>
       </footer>
     </div>
