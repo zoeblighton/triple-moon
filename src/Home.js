@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout";
 import ContactSection from "./Contact";
-import GalleryPage from "./GalleryPage";
 
 function PhotoMarquee({ images }) {
   const marqueeRef = useRef(null);
