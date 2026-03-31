@@ -136,19 +136,7 @@ export default function Home() {
       <section id="offerings" className="section">
         <div className="sectionHeader">
           <h2>Group Workshops</h2>
-
-          <p>
-            If you want to host your own magical occasion, we will bring the
-            magic to you, in the comfort of your own home or chosen venue.
-            Minimum of 6 per group, contact for details.
-          </p>
-          <p>
-            We can deliver all of the following packages to you and your tribe.
-            An intimate learning opportunity for you and your people to connect
-            in a magical way.
-          </p>
-          <p>Workshops can be tailored to your needs and the season.</p>
-
+          <p>Explore the offerings below — select any card to learn more</p>
           <div
             className="scrollerControls"
             aria-label="Offerings scroller controls"
@@ -171,7 +159,19 @@ export default function Home() {
             </button>
           </div>
         </div>
-
+        <div>
+          <p>
+            We can deliver all of the following packages to you and your tribe.
+            An intimate learning opportunity for you and your people to connect
+            in a magical way.
+          </p>
+          <p>
+            If you want to host your own magical occasion, we will bring the
+            magic to you, in the comfort of your own home or chosen venue.
+            Minimum of 6 per group, contact for details.
+          </p>
+          <p>Workshops can be tailored to your needs and the season.</p>
+        </div>
         <div className="offeringsWrap">
           <div
             className="offeringsRow"
@@ -224,6 +224,37 @@ export default function Home() {
                 <li>Group blessing and sharing circle</li>
               </ul>
             </Link>
+            <Link to="./AMagicalHome" className="card cardLink offeringCard">
+              <h3>The Magical Home & Imbolc</h3>
+              <p>
+                Come and spend some magical time with us, lighting the way for
+                spring, and creating magic for the home.
+              </p>
+              <ul className="bullets">
+                <li>Learning about protective magic for the home.</li>
+                <li>Discovering the traditions of Imbolc.</li>
+                <li>Candle activity.</li>
+                <li>Creating magical home accessories.</li>
+              </ul>
+            </Link>
+
+            <Link to="./LovingMagically" className="card cardLink offeringCard">
+              <h3>Loving Magically</h3>
+
+              <p>
+                Come and join us for a magical session exploring love, self-care
+                and folklore magic. Discovering herbs and crystals associated
+                with love.{" "}
+              </p>
+
+              <ul className="bullets">
+                <li>Creating a love posy.</li>
+                <li>Making a crystal bath jar.</li>
+                <li>Making a herb love poppet.</li>
+                <li>Sampling a love brew.</li>
+                <li>A guided meditation.</li>
+              </ul>
+            </Link>
           </div>
         </div>
       </section>
@@ -231,7 +262,7 @@ export default function Home() {
       <section id="other-offerings" className="section">
         <div className="sectionHeader">
           <h2>Other Offerings</h2>
-          <p>Click on each offering to learn more</p>
+
           <div
             className="scrollerControls"
             aria-label="Offerings scroller controls"
@@ -254,7 +285,9 @@ export default function Home() {
             </button>
           </div>
         </div>
-
+        <div>
+          <p>We also offer individual coaching and support sessions.</p>{" "}
+        </div>
         <div className="offeringsWrap">
           <div
             className="offeringsRow"
@@ -303,43 +336,6 @@ export default function Home() {
           <div className="contactFormCol">
             <ContactSection />
           </div>
-
-          <aside
-            className="card contactAside"
-            aria-label="Reaching out reassurance"
-          >
-            <h3 className="contactAsideTitle">
-              You Don’t Have To Have It All Figured Out
-            </h3>
-
-            <div className="contactAsideBody">
-              <p>
-                You don’t need to know exactly what you’re looking for before
-                you reach out.
-                <br />
-                You don’t need to be “spiritual enough.”
-                <br />
-                You don’t need to be in crisis.
-              </p>
-
-              <p>
-                Many of the women who come into this space simply feel they’re
-                ready for more connection, more clarity, more support.
-              </p>
-
-              <p>If that’s you, you’re welcome here.</p>
-
-              <p>
-                Reaching out doesn’t commit you to anything.
-                <br />
-                It simply opens a conversation.
-              </p>
-
-              <p className="contactAsideClosing">
-                And sometimes, that’s where everything begins.
-              </p>
-            </div>
-          </aside>
         </div>
       </section>
     </Layout>

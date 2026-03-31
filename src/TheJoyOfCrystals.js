@@ -47,12 +47,7 @@ export default function TheJoyOfCrystals() {
           I have put together a list of resources for those interested in
           learning more about crystals and their uses.
         </p>
-        <a
-          class="button"
-          href="https://www.Thejoyofcrystals.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a class="button" href="/resources" target="_blank" rel="noreferrer">
           Explore Resources
         </a>
 
