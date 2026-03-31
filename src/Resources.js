@@ -83,11 +83,8 @@ export default function Resources() {
       <section className="section">
         <div className="sectionHeader">
           <h2>Resources</h2>
-          <h3 className="muted">
-            {" "}
-            A collection of magical resources, organised A–Z. Use filters or
-            search to explore.{" "}
-          </h3>
+        </div>
+        <div>
           <p className="muted">
             This space is a growing collection of magical resources I’ve
             gathered over time — herbs, plants, roots, resins, minerals, and
@@ -96,8 +93,12 @@ export default function Resources() {
             search for what you’re drawn to. Use it as a reference, a starting
             point, or a quiet place to explore and reconnect with your practice.
           </p>
+          <h3 className="muted">
+            {" "}
+            A collection of magical resources, organised A–Z. Use filters or
+            search to explore.{" "}
+          </h3>
         </div>
-
         <div className="filters">
           <select
             value={typeFilter}

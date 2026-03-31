@@ -127,7 +127,7 @@ const galleryItems = [
   {
     id: 22,
     title: "Self-Love Bath Salts",
-    category: "Loving Magically",
+    category: "Loving Magically Workshop",
     image: "/images/crafting.jpg",
   },
   {
@@ -225,7 +225,7 @@ const galleryItems = [
   {
     id: 41,
     title: "Wheel of the Year Craft",
-    category: "Cyclical Living Workshop",
+    category: "Wheel of the Year Workshop",
     image: "/images/making-things.jpg",
   },
   {

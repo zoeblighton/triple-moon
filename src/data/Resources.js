@@ -19,6 +19,643 @@ export const resources = [
   },
 
   {
+    type: "Crystal",
+    name: "Amber",
+    keywords: ["healing", "confidence", "protection"],
+    summary:
+      "Often used for emotional balance, clearing negativity, and supporting confidence and creative self-expression.",
+    uses: ["Emotional balance", "Stress relief", "Energy cleansing"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Ametrine",
+    keywords: ["clarity", "focus", "cleansing"],
+    summary:
+      "Often used for cleansing energy, strengthening focus, and supporting harmony during stressful times.",
+    uses: ["Meditation", "Aura cleansing", "Creative focus"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Apache Tears",
+    keywords: ["grief", "grounding", "protection"],
+    summary:
+      "Often used for grounding, psychic protection, and gently supporting the release of grief and heavy emotions.",
+    uses: ["Grief support", "Grounding", "Emotional protection"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Aquamarine",
+    keywords: ["calm", "communication", "intuition"],
+    summary:
+      "Often used for soothing the mind, easing stress, and supporting clear communication and intuition.",
+    uses: ["Communication", "Meditation", "Stress relief"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Aragonite",
+    keywords: ["grounding", "patience", "stability"],
+    summary:
+      "Often used for grounding physical energy, building patience, and bringing stability during stressful times.",
+    uses: ["Grounding", "Patience", "Emotional support"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Black Moonstone",
+    keywords: ["intuition", "shadow work", "reflection"],
+    summary:
+      "Often used for deep reflection, emotional balance, and exploring intuition and personal transformation.",
+    uses: ["Shadow work", "Moon rituals", "Intuition"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Bloodstone",
+    keywords: ["strength", "grounding", "courage"],
+    summary:
+      "Often used for grounding, strengthening resilience, and supporting courage during challenging times.",
+    uses: ["Grounding", "Energy support", "Emotional strength"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Blue Chalcedony",
+    keywords: ["calm", "kindness", "communication"],
+    summary:
+      "Often used for absorbing negative energy, encouraging goodwill, and supporting calm communication.",
+    uses: ["Communication", "Emotional soothing", "Harmony"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Blue Lace Agate",
+    keywords: ["peace", "speech", "calm"],
+    summary:
+      "Often used for gentle calming, easing communication, and supporting peaceful self-expression.",
+    uses: ["Public speaking", "Calming", "Throat chakra work"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Carnelian",
+    keywords: ["confidence", "courage", "vitality"],
+    summary:
+      "Often used for confidence, motivation, courage, and reconnecting with warmth, creativity, and joy.",
+    uses: ["Self-esteem", "Creativity", "Motivation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Petrified Wood",
+    keywords: ["grounding", "stability", "ancient wisdom"],
+    summary:
+      "Often used for grounding, emotional stability, and connecting with ancient earth energy.",
+    uses: ["Grounding", "Meditation", "Stability"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Picture Jasper",
+    keywords: ["connection", "earth", "comfort"],
+    summary:
+      "Often used to encourage connection with nature and provide comfort during emotional healing.",
+    uses: ["Grounding", "Creativity", "Emotional support"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Pietersite",
+    keywords: ["transformation", "clarity", "courage"],
+    summary:
+      "Often used for personal transformation, gaining clarity, and strengthening courage.",
+    uses: ["Self-reflection", "Change", "Confidence"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Prehnite",
+    keywords: ["intuition", "peace", "love"],
+    summary:
+      "Often used to encourage intuition, peaceful reflection, and unconditional love.",
+    uses: ["Meditation", "Emotional healing", "Inner peace"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Rainbow Fluorite",
+    keywords: ["focus", "clarity", "protection"],
+    summary:
+      "Often used to improve focus, clear mental clutter, and provide energetic protection.",
+    uses: ["Study", "Meditation", "Mental clarity"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Rainbow Moonstone",
+    keywords: ["intuition", "new beginnings", "clarity"],
+    summary:
+      "Often used to support intuition, welcome new beginnings, and enhance awareness.",
+    uses: ["Meditation", "Reflection", "New beginnings"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Rainbow Obsidian",
+    keywords: ["protection", "healing", "self-discovery"],
+    summary:
+      "Often used for protection, emotional healing, and deep self-discovery.",
+    uses: ["Shadow work", "Protection", "Meditation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Red Calcite",
+    keywords: ["energy", "motivation", "strength"],
+    summary:
+      "Often used to boost motivation, strengthen vitality, and increase confidence.",
+    uses: ["Motivation", "Energy work", "Confidence"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Red Jasper",
+    keywords: ["stability", "strength", "grounding"],
+    summary:
+      "Often used to promote emotional strength, grounding, and stability.",
+    uses: ["Grounding", "Protection", "Strength"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Rose Quartz",
+    keywords: ["love", "compassion", "healing"],
+    summary: "Often used to encourage love, compassion, and emotional healing.",
+    uses: ["Self-love", "Relationships", "Emotional healing"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Ruby",
+    keywords: ["passion", "vitality", "confidence"],
+    summary:
+      "Often used to boost vitality, encourage passion, and strengthen confidence.",
+    uses: ["Motivation", "Confidence", "Energy"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Ruby in Fuchsite",
+    keywords: ["balance", "love", "empowerment"],
+    summary:
+      "Often used to balance emotional strength with compassion and encourage self-worth.",
+    uses: ["Self-love", "Emotional balance", "Healing"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Selenite",
+    keywords: ["cleansing", "clarity", "peace"],
+    summary:
+      "Often used to cleanse energy, promote clarity, and encourage peaceful environments.",
+    uses: ["Energy cleansing", "Meditation", "Calm"],
+    cautions: ["Keep dry – water soluble"],
+  },
+  {
+    type: "Crystal",
+    name: "Septarian",
+    keywords: ["communication", "confidence", "grounding"],
+    summary:
+      "Often used to support confidence in communication and emotional grounding.",
+    uses: ["Public speaking", "Grounding", "Confidence"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Shaman Quartz",
+    keywords: ["healing", "journeying", "connection"],
+    summary:
+      "Often used for spiritual journeying, healing, and deep connection to nature.",
+    uses: ["Meditation", "Spiritual work", "Healing"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Shiva Lingam",
+    keywords: ["balance", "energy", "creation"],
+    summary:
+      "Often used to balance energies and encourage creativity and vitality.",
+    uses: ["Meditation", "Energy balance", "Creativity"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Smoky Quartz",
+    keywords: ["grounding", "protection", "release"],
+    summary:
+      "Often used for grounding energy, releasing negativity, and emotional support.",
+    uses: ["Grounding", "Protection", "Stress relief"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Snowflake Obsidian",
+    keywords: ["balance", "purity", "reflection"],
+    summary:
+      "Often used to balance emotions and support gentle self-reflection.",
+    uses: ["Meditation", "Balance", "Emotional healing"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Sodalite",
+    keywords: ["logic", "truth", "communication"],
+    summary:
+      "Often used to support logical thinking, emotional balance, and clear communication.",
+    uses: ["Study", "Communication", "Calm thinking"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Strawberry Quartz",
+    keywords: ["love", "joy", "connection"],
+    summary:
+      "Often used to encourage joy, emotional connection, and loving energy.",
+    uses: ["Self-love", "Relationships", "Meditation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Sunstone",
+    keywords: ["joy", "confidence", "vitality"],
+    summary: "Often used to inspire joy, confidence, and positive life energy.",
+    uses: ["Confidence", "Motivation", "Positivity"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Tiger Iron",
+    keywords: ["strength", "energy", "creativity"],
+    summary:
+      "Often used to support strength, stamina, and creative problem-solving.",
+    uses: ["Motivation", "Creativity", "Grounding"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Tiger's Eye",
+    keywords: ["confidence", "protection", "clarity"],
+    summary:
+      "Often used to build confidence, provide protection, and encourage clear thinking.",
+    uses: ["Confidence", "Decision-making", "Protection"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Black Tourmaline",
+    keywords: ["protection", "grounding", "cleansing"],
+    summary:
+      "Often used for strong energetic protection and grounding negative energy.",
+    uses: ["Protection", "Grounding", "Energy cleansing"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Turquoise",
+    keywords: ["communication", "peace", "wisdom"],
+    summary:
+      "Often used to support honest communication, wisdom, and emotional peace.",
+    uses: ["Communication", "Meditation", "Protection"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Unakite",
+    keywords: ["healing", "balance", "growth"],
+    summary:
+      "Often used for emotional healing, personal growth, and balancing heart energy.",
+    uses: ["Emotional healing", "Meditation", "Self-awareness"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Yellow Fluorite",
+    keywords: ["focus", "creativity", "clarity"],
+    summary:
+      "Often used to support creative thinking, mental clarity, and confident decision-making.",
+    uses: ["Study", "Creativity", "Problem solving"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "White Calcite",
+    keywords: ["clarity", "amplification", "calm"],
+    summary:
+      "Often used to amplify energy, promote clarity, and support emotional calm.",
+    uses: ["Meditation", "Energy work", "Mental clarity"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Golden Sheen Obsidian",
+    keywords: ["insight", "confidence", "protection"],
+    summary:
+      "Often used for gaining insight, strengthening confidence, and energetic protection.",
+    uses: ["Reflection", "Protection", "Self-awareness"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Blue Apatite",
+    keywords: ["inspiration", "motivation", "clarity"],
+    summary:
+      "Often used to inspire motivation, creativity, and clarity of purpose.",
+    uses: ["Goal setting", "Creativity", "Motivation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Pyrite",
+    keywords: ["confidence", "abundance", "strength"],
+    summary:
+      "Often used to build confidence, attract abundance, and support strong personal energy.",
+    uses: ["Manifestation", "Confidence", "Motivation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Honey Calcite",
+    keywords: ["confidence", "focus", "clarity"],
+    summary:
+      "Often used to strengthen confidence, enhance focus, and support personal development.",
+    uses: ["Study support", "Confidence", "Meditation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Kyanite",
+    keywords: ["alignment", "communication", "calm"],
+    summary:
+      "Often used for chakra alignment, calming the mind, and supporting clear communication.",
+    uses: ["Meditation", "Energy alignment", "Communication"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Labradorite",
+    keywords: ["intuition", "protection", "transformation"],
+    summary:
+      "Often used for strengthening intuition, supporting transformation, and protecting energy.",
+    uses: ["Spiritual work", "Meditation", "Energy protection"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Lapis Lazuli",
+    keywords: ["wisdom", "truth", "intuition"],
+    summary:
+      "Often used to encourage truth, wisdom, and deeper intuitive understanding.",
+    uses: ["Self-expression", "Meditation", "Insight"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Larvikite",
+    keywords: ["protection", "clarity", "grounding"],
+    summary:
+      "Often used for grounding, protection, and supporting clear decision-making.",
+    uses: ["Focus", "Protection", "Insight"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Lemon Quartz",
+    keywords: ["clarity", "positivity", "focus"],
+    summary:
+      "Often used to promote clarity of thought, positivity, and mental focus.",
+    uses: ["Study", "Meditation", "Positive mindset"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Lemurian Quartz",
+    keywords: ["healing", "intuition", "connection"],
+    summary:
+      "Often used to deepen spiritual connection and encourage healing insight.",
+    uses: ["Meditation", "Energy work", "Inner guidance"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Lepidolite",
+    keywords: ["calm", "balance", "stress relief"],
+    summary:
+      "Often used to ease stress, support emotional balance, and promote calm thinking.",
+    uses: ["Relaxation", "Sleep support", "Emotional balance"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Magnesite",
+    keywords: ["relaxation", "peace", "awareness"],
+    summary:
+      "Often used to encourage relaxation, inner peace, and self-awareness.",
+    uses: ["Meditation", "Stress relief", "Reflection"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Malachite",
+    keywords: ["transformation", "protection", "growth"],
+    summary:
+      "Often used to support transformation, emotional growth, and energetic protection.",
+    uses: ["Personal growth", "Emotional balance", "Protection"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Moonstone",
+    keywords: ["intuition", "cycles", "emotions"],
+    summary:
+      "Often used to support intuition, emotional balance, and connection to natural cycles.",
+    uses: ["Moon rituals", "Reflection", "Emotional healing"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Ocean Jasper",
+    keywords: ["peace", "patience", "renewal"],
+    summary:
+      "Often used to encourage patience, emotional renewal, and a sense of calm.",
+    uses: ["Meditation", "Emotional balance", "Stress relief"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Opal Andine",
+    keywords: ["communication", "peace", "emotional healing"],
+    summary:
+      "Often used to encourage emotional healing, peaceful communication, and gentle reflection.",
+    uses: ["Heart work", "Communication", "Meditation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Orange Calcite",
+    keywords: ["creativity", "confidence", "joy"],
+    summary:
+      "Often used to stimulate creativity, boost confidence, and encourage joy.",
+    uses: ["Creative work", "Motivation", "Self-expression"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Orca Agate",
+    keywords: ["communication", "calm", "confidence"],
+    summary:
+      "Often used to encourage calm communication and strengthen emotional confidence.",
+    uses: ["Self-expression", "Emotional balance", "Confidence"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Cavansite",
+    keywords: ["clarity", "motivation", "optimism"],
+    summary:
+      "Often used to inspire clarity, optimism, and motivation when feeling stuck or uncertain.",
+    uses: ["Goal setting", "Personal growth", "Emotional renewal"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Celestite",
+    keywords: ["calm", "sleep", "spiritual"],
+    summary:
+      "Often used for calming anxiety, supporting restful sleep, and encouraging gentle spiritual connection.",
+    uses: ["Sleep support", "Meditation", "Stress relief"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Chrysocolla",
+    keywords: ["communication", "balance", "calm"],
+    summary:
+      "Often used to support emotional balance, calm communication, and gentle heart healing.",
+    uses: ["Emotional healing", "Communication", "Inner peace"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Chrysoprase",
+    keywords: ["optimism", "self-acceptance", "hope"],
+    summary:
+      "Often used for encouraging optimism, self-acceptance, and a more positive outlook on life.",
+    uses: ["Self-esteem", "Emotional healing", "Positive mindset"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Citrine",
+    keywords: ["abundance", "confidence", "success"],
+    summary:
+      "Often used for attracting abundance, building confidence, and supporting clear decision-making.",
+    uses: ["Manifestation", "Confidence", "Creativity"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Clear Quartz",
+    keywords: ["clarity", "energy", "amplification"],
+    summary:
+      "Often used to amplify energy, support clarity of thought, and enhance spiritual focus.",
+    uses: ["Meditation", "Energy work", "Manifestation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Crocoite",
+    keywords: ["passion", "change", "creativity"],
+    summary:
+      "Often used to energise creativity, encourage transformation, and inspire passion for life.",
+    uses: ["Creative work", "Motivation", "Life transitions"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Emerald",
+    keywords: ["love", "healing", "balance"],
+    summary:
+      "Often used for heart healing, emotional balance, and encouraging compassion and harmony.",
+    uses: ["Heart healing", "Relationships", "Emotional balance"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Fire Agate",
+    keywords: ["protection", "courage", "vitality"],
+    summary:
+      "Often used for protection, courage, and building strong emotional foundations during change.",
+    uses: ["Protection", "Confidence", "Personal strength"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Fire Opal",
+    keywords: ["passion", "confidence", "creativity"],
+    summary:
+      "Often used to ignite passion, increase confidence, and encourage creative expression.",
+    uses: ["Creativity", "Motivation", "Personal empowerment"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Garnet",
+    keywords: ["energy", "commitment", "strength"],
+    summary:
+      "Often used for revitalising energy, inspiring commitment, and strengthening courage.",
+    uses: ["Vitality", "Love", "Motivation"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Green Aventurine",
+    keywords: ["luck", "growth", "opportunity"],
+    summary:
+      "Often used for attracting opportunity, encouraging growth, and supporting optimism.",
+    uses: ["Abundance", "Confidence", "New beginnings"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Green Calcite",
+    keywords: ["compassion", "healing", "calm"],
+    summary:
+      "Often used to encourage compassion, emotional healing, and gentle heart-centred balance.",
+    uses: ["Emotional healing", "Self-compassion", "Calming"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Hematite",
+    keywords: ["grounding", "focus", "protection"],
+    summary:
+      "Often used for grounding energy, improving focus, and providing energetic protection.",
+    uses: ["Grounding", "Mental clarity", "Protection"],
+    cautions: [],
+  },
+  {
+    type: "Crystal",
+    name: "Herkimer Diamond",
+    keywords: ["clarity", "energy", "spiritual"],
+    summary:
+      "Often used to amplify spiritual energy, increase clarity, and deepen meditation practices.",
+    uses: ["Meditation", "Energy amplification", "Spiritual awareness"],
+    cautions: [],
+  },
+  {
     type: "Herb",
     name: "Acorn",
     keywords: [
