@@ -8,6 +8,7 @@ import Resources from "./Resources";
 import EnergyCrystalSupport from "./EnergyCrystalSupport";
 import TheJoyOfCrystals from "./TheJoyOfCrystals";
 import GalleryPage from "./GalleryPage";
+import AMagicalHome from "./AMagicalHome";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
       <Route path="/contact" element={<Contact />} />
       <Route path="TheJoyOfCrystals" element={<TheJoyOfCrystals />} />
       <Route path="/GalleryPage" element={<GalleryPage />} />
+      <Route path="/AMagicalHome" element={<AMagicalHome />} />
     </Routes>
   );
 }

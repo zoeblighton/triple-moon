@@ -15,54 +15,23 @@ export default function Resources() {
   const [query, setQuery] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:4000/resources")
-      .then((res) => res.json())
+    const params = new URLSearchParams();
 
+    if (typeFilter !== "All") params.set("type", typeFilter);
+    if (elementFilter !== "All") params.set("element", elementFilter);
+    if (intentFilter !== "All") params.set("intent", intentFilter);
+    if (query.trim()) params.set("q", query.trim());
+
+    fetch(`http://localhost:4000/resources/search?${params.toString()}`)
+      .then((res) => res.json())
       .then((data) => {
         setResources(data);
       });
-  }, []);
+  }, [typeFilter, elementFilter, intentFilter, query]);
 
   const filtered = useMemo(() => {
-    const q = query.trim().toLowerCase();
-
-    return resources.filter((item) => {
-      const typeOk = typeFilter === "All" || item.type === typeFilter;
-
-      const elementValue = item.associations?.element;
-      const elementOk =
-        elementFilter === "All" ||
-        elementValue === elementFilter ||
-        (Array.isArray(elementValue) && elementValue.includes(elementFilter));
-
-      const intentOk =
-        intentFilter === "All" || item.filterTags?.includes(intentFilter);
-
-      if (!typeOk || !elementOk || !intentOk) return false;
-
-      if (!q) return true;
-
-      const hay = [
-        item.name,
-        item.type,
-        ...(item.alsoKnownAs || []),
-        ...(item.keywords || []),
-        item.summary,
-        ...(item.uses || []),
-        ...(item.cautions || []),
-        item.associations?.sabbat,
-        item.associations?.deity,
-        item.associations?.planet,
-        item.associations?.magic,
-      ]
-        .flat()
-        .filter(Boolean)
-        .join(" ")
-        .toLowerCase();
-
-      return hay.includes(q);
-    });
-  }, [query, typeFilter, elementFilter, intentFilter]);
+    return resources;
+  }, [resources]);
 
   const grouped = useMemo(() => {
     const map = new Map();
