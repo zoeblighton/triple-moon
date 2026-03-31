@@ -1692,8 +1692,6 @@ export const resources = [
     },
   },
 
-  /* ---------- D ---------- */
-
   {
     type: "Herb",
     name: "Damiana",

@@ -1,6 +1,5 @@
-import { useMemo, useState } from "react";
 import Layout from "./Layout";
-import { resources } from "./data/Resources";
+import { useMemo, useState, useEffect } from "react";
 import "./Resources.css";
 
 function firstLetter(name = "") {
@@ -9,10 +8,20 @@ function firstLetter(name = "") {
 }
 
 export default function Resources() {
+  const [resources, setResources] = useState([]);
   const [typeFilter, setTypeFilter] = useState("All");
   const [elementFilter, setElementFilter] = useState("All");
   const [intentFilter, setIntentFilter] = useState("All");
   const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:4000/resources")
+      .then((res) => res.json())
+
+      .then((data) => {
+        setResources(data);
+      });
+  }, []);
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -27,10 +36,7 @@ export default function Resources() {
         (Array.isArray(elementValue) && elementValue.includes(elementFilter));
 
       const intentOk =
-        intentFilter === "All" ||
-        (item.keywords || [])
-          .map((k) => k.toLowerCase())
-          .includes(intentFilter.toLowerCase());
+        intentFilter === "All" || item.filterTags?.includes(intentFilter);
 
       if (!typeOk || !elementOk || !intentOk) return false;
 
