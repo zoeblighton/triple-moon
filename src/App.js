@@ -9,6 +9,7 @@ import EnergyCrystalSupport from "./EnergyCrystalSupport";
 import TheJoyOfCrystals from "./TheJoyOfCrystals";
 import GalleryPage from "./GalleryPage";
 import AMagicalHome from "./AMagicalHome";
+import LovingMagically from "./LovingMagically";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ export default function App() {
       <Route path="TheJoyOfCrystals" element={<TheJoyOfCrystals />} />
       <Route path="/GalleryPage" element={<GalleryPage />} />
       <Route path="/AMagicalHome" element={<AMagicalHome />} />
+      <Route path="/LovingMagically" element={<LovingMagically />} />
     </Routes>
   );
 }
