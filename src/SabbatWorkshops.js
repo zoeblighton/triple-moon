@@ -1,12 +1,14 @@
 import Layout from "./Layout";
+import Seo from "./Seo";
 import InstagramFeed from "./InstagramFeed";
 
 export default function SabbatWorkshops() {
   return (
     <Layout>
-      <section className="section">
+      <Seo path="/SabbatWorkshops" />
+      <section className="section prose">
         <div className="sectionHeader">
-          <h2>Cyclical Living Workshops</h2>
+          <h1 className="pageTitle">Cyclical Living Workshops</h1>
           <p className="muted">
             Group workshops aligned with the Wheel of the Year — ritual,
             intention, and seasonal wisdom.

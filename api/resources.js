@@ -86,16 +86,6 @@ function mergeKeywords(original = [], tags = []) {
 
 export const baseResources = [
   {
-    type: "Herb",
-    name: "Chamomile",
-    alsoKnownAs: ["Matricaria chamomilla"],
-    keywords: ["calm", "sleep", "soothing"],
-    summary: "Traditionally used to support relaxation and gentle calm.",
-    uses: ["Tea", "Bath", "Bedtime ritual"],
-    cautions: ["Avoid if allergic to ragweed family (Asteraceae)."],
-  },
-
-  {
     type: "Crystal",
     name: "Amethyst",
     keywords: ["peace", "intuition", "sleep"],
@@ -1468,7 +1458,10 @@ export const baseResources = [
   {
     type: "Herb",
     name: "Chamomile",
+    alsoKnownAs: ["Matricaria chamomilla"],
     keywords: [
+      "calm",
+      "soothing",
       "love",
       "sleep",
       "protection",

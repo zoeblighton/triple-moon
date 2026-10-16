@@ -1,0 +1,47 @@
+{
+  "/": {
+    "title": null,
+    "description": "Spiritual workshops, crystal healing, Reiki Seichem and life coaching in Colchester, Essex. Seasonal group workshops brought to your home or venue."
+  },
+  "/SabbatWorkshops": {
+    "title": "Cyclical Living Sabbat Workshops",
+    "description": "Group workshops following the Wheel of the Year: seasonal rituals, intention setting, myth and spellcraft for each Sabbat."
+  },
+  "/TheJoyOfCrystals": {
+    "title": "The Joy of Crystals Workshop",
+    "description": "Host a crystal workshop for 6 or more: crystal properties, chakra associations, making a dowser and crystal meditation."
+  },
+  "/EnchantedHen": {
+    "title": "The Enchanted Hen Bridal Workshop",
+    "description": "A magical hen party workshop: love rituals, intention setting, flower crowns and a group blessing. Brought to your home or venue in Essex."
+  },
+  "/AMagicalHome": {
+    "title": "The Magical Home & Imbolc Workshop",
+    "description": "An Imbolc workshop on protective home magic, candle work and creating magical home accessories. Group sessions in Essex."
+  },
+  "/LovingMagically": {
+    "title": "Loving Magically Workshop",
+    "description": "A workshop exploring love, self-care and folklore magic: love posies, crystal bath jars, herb poppets and guided meditation."
+  },
+  "/EnergyCrystalSupport": {
+    "title": "Reiki Seichem & Crystal Healing",
+    "description": "Reiki Seichem and crystal healing sessions for energetic balance, well-being and personal growth in Colchester, Essex."
+  },
+  "/coaching": {
+    "title": "1:1 Life Coaching",
+    "description": "Supportive 1:1 life coaching blending spiritual support with practical steps for clarity, confidence and action. Based in Colchester, Essex."
+  },
+  "/GalleryPage": {
+    "title": "Gallery",
+    "description": "Photos from Triple Moon workshops: seasonal crafts, altars, drum circles and customer creations."
+  },
+  "/resources": {
+    "title": "Magical Resources A–Z: Herbs, Crystals & Resins",
+    "description": "A free A–Z guide to magical herbs, trees, roots, flowers, resins and crystals. Filter by element or intention, or search for what you're drawn to."
+  },
+  "/404": {
+    "title": "Page not found",
+    "description": "This page could not be found.",
+    "noindex": true
+  }
+}

@@ -1,12 +1,14 @@
 import Layout from "./Layout";
+import Seo from "./Seo";
 import InstagramFeed from "./InstagramFeed";
 
 export default function LovingMagically() {
   return (
     <Layout>
-      <section className="section">
+      <Seo path="/LovingMagically" />
+      <section className="section prose">
         <div className="sectionHeader">
-          <h2>Loving Magically</h2>
+          <h1 className="pageTitle">Loving Magically</h1>
           <p className="muted">
             A gentle, creative session exploring love, self-care, and folklore
             magic.

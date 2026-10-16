@@ -1,12 +1,14 @@
 import Layout from "./Layout";
+import Seo from "./Seo";
 import "./Coaching.css";
 
 export default function Coaching() {
   return (
     <Layout>
+      <Seo path="/coaching" />
       <section className="section">
         <div className="sectionHeader">
-          <h2>1:1 Life Coaching</h2>
+          <h1 className="pageTitle">1:1 Life Coaching</h1>
           <p className="muted">
             Clarity, confidence, and action. Spiritual support and practical
             steps.

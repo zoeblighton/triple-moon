@@ -55,7 +55,7 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="contact" className="contactSection">
+    <div className="contactSection">
       <p className="muted">Send me a message below, or reach out on socials.</p>
 
       <div className="contactRow">
@@ -88,10 +88,6 @@ export default function ContactSection() {
           title="Facebook"
         >
           <FaFacebookF />
-        </a>
-
-        <a className="button buttonSecondary" href="#offerings">
-          Explore offerings
         </a>
       </div>
 
@@ -157,6 +153,6 @@ export default function ContactSection() {
           )}
         </div>
       </form>
-    </section>
+    </div>
   );
 }

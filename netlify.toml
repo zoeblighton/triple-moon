@@ -15,3 +15,10 @@ from = "https://triplemoon.netlify.app/*"
 to = "https://triplemoon.co.uk/:splat"
 status = 301
 force = true
+
+# Single-page app fallback: let React Router handle every page URL.
+# Must stay last so the domain redirects above run first.
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200

@@ -1,14 +1,90 @@
-export const resources = [
-  {
-    type: "Herb",
-    name: "Chamomile",
-    alsoKnownAs: ["Matricaria chamomilla"],
-    keywords: ["calm", "sleep", "soothing"],
-    summary: "Traditionally used to support relaxation and gentle calm.",
-    uses: ["Tea", "Bath", "Bedtime ritual"],
-    cautions: ["Avoid if allergic to ragweed family (Asteraceae)."],
-  },
+const FILTER_TAGS = ["love", "protection", "money", "healing", "psychic"];
 
+const INTENT_RULES = {
+  love: [
+    "love",
+    "lust",
+    "romance",
+    "attraction",
+    "fidelity",
+    "marriage",
+    "passion",
+    "aphrodisiac",
+    "self love",
+    "self-love",
+    "friendship",
+  ],
+  protection: [
+    "protection",
+    "warding",
+    "banishing",
+    "cleansing",
+    "purification",
+    "hex",
+    "curse",
+    "evil eye",
+    "shield",
+    "negativity",
+  ],
+  money: [
+    "money",
+    "prosperity",
+    "wealth",
+    "abundance",
+    "success",
+    "business",
+    "luck",
+  ],
+  healing: [
+    "healing",
+    "calm",
+    "sleep",
+    "stress",
+    "peace",
+    "soothing",
+    "emotional",
+    "relaxation",
+    "wellbeing",
+  ],
+  psychic: [
+    "psychic",
+    "clairvoyance",
+    "divination",
+    "dream",
+    "astral",
+    "intuition",
+    "spirit",
+    "third eye",
+    "meditation",
+  ],
+};
+
+function normalizeText(value) {
+  if (!value) return "";
+  if (Array.isArray(value)) return value.map(normalizeText).join(" ");
+  if (typeof value === "object")
+    return Object.values(value).map(normalizeText).join(" ");
+  return String(value).toLowerCase();
+}
+
+function getIntentTags(item) {
+  const haystack = [
+    normalizeText(item.keywords),
+    normalizeText(item.summary),
+    normalizeText(item.uses),
+    normalizeText(item.associations),
+  ].join(" ");
+
+  return FILTER_TAGS.filter((tag) =>
+    INTENT_RULES[tag].some((rule) => haystack.includes(rule)),
+  );
+}
+
+function mergeKeywords(original = [], tags = []) {
+  return [...new Set([...original.map((k) => k.toLowerCase()), ...tags])];
+}
+
+export const baseResources = [
   {
     type: "Crystal",
     name: "Amethyst",
@@ -1382,7 +1458,10 @@ export const resources = [
   {
     type: "Herb",
     name: "Chamomile",
+    alsoKnownAs: ["Matricaria chamomilla"],
     keywords: [
+      "calm",
+      "soothing",
       "love",
       "sleep",
       "protection",
@@ -1786,8 +1865,6 @@ export const resources = [
       magic: "Solar",
     },
   },
-
-  /* ---------- E ---------- */
 
   {
     type: "Herb",
@@ -3785,3 +3862,13 @@ export const resources = [
     },
   },
 ];
+
+export const resources = baseResources.map((item) => {
+  const filterTags = getIntentTags(item);
+
+  return {
+    ...item,
+    filterTags,
+    keywords: mergeKeywords(item.keywords, filterTags),
+  };
+});

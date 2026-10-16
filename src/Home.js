@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
 import Layout from "./Layout";
+import Seo from "./Seo";
 import ContactSection from "./Contact";
 
 function PhotoMarquee({ images }) {
@@ -44,9 +45,9 @@ function PhotoMarquee({ images }) {
       onPointerCancel={endDrag}
     >
       <div className="photoTrack">
-        {images.map((src, i) => (
-          <div className="photoTile" key={"a-" + src + i}>
-            <img src={src} alt="" loading="lazy" draggable="false" />
+        {images.map(({ src, alt }) => (
+          <div className="photoTile" key={src}>
+            <img src={src} alt={alt} loading="lazy" draggable="false" />
           </div>
         ))}
       </div>
@@ -89,6 +90,7 @@ export default function Home() {
   };
   return (
     <Layout showContact={false}>
+      <Seo path="/" />
       <section className="hero">
         <div className="heroMain">
           <h1>Come home to yourself</h1>
@@ -109,34 +111,50 @@ export default function Home() {
             world of the triplemoon tribe, for further information get in touch
             below.
           </p>
-          <p>
-            {" "}
-            If you want to host your own magical occasion, we will bring the
-            magic to you. Minimum of 6 people required for each workshop.
-          </p>
-
-          <Link className="button" to="/#contact">
-            Work with me
-          </Link>
-          <Link className="button buttonSecondary" to="/#offerings">
-            See my workshops
-          </Link>
+          <div className="heroActions">
+            <Link className="button" to="/#contact">
+              Work with me
+            </Link>
+            <Link className="button buttonSecondary" to="/#offerings">
+              See my workshops
+            </Link>
+          </div>
         </div>
+        <img
+          className="heroImage"
+          src="/images/portrait.jpg"
+          alt="Walking a sunlit woodland path in spring"
+          width="1530"
+          height="1530"
+          fetchPriority="high"
+        />
       </section>
       <PhotoMarquee
         images={[
-          "/images/flowers.jpg",
-          "/images/altar.jpg",
-          "/images/promo.jpg",
-          "/images/drums.jpg",
-          "/images/altar2.jpg",
+          {
+            src: "/images/flowers.jpg",
+            alt: "Workshop guests holding their finished flower arrangements",
+          },
+          {
+            src: "/images/altar.jpg",
+            alt: "Seasonal altar with crystals, a star and greenery",
+          },
+          {
+            src: "/images/promo.jpg",
+            alt: "Rose soaps and ocean jasper crystals",
+          },
+          { src: "/images/drums.jpg", alt: "Djembe drums ready for a drum circle" },
+          {
+            src: "/images/altar2.jpg",
+            alt: "Altar with pink flowers in a blue vase",
+          },
         ]}
       />
 
       <section id="offerings" className="section">
         <div className="sectionHeader">
           <h2>Group Workshops</h2>
-          <p>Explore the offerings below — select any card to learn more</p>
+          <p className="muted">Select any workshop to learn more.</p>
           <div
             className="scrollerControls"
             aria-label="Offerings scroller controls"
@@ -332,11 +350,7 @@ export default function Home() {
           <h2>Book / Contact</h2>
         </div>
 
-        <div className="contactGrid">
-          <div className="contactFormCol">
-            <ContactSection />
-          </div>
-        </div>
+        <ContactSection />
       </section>
     </Layout>
   );

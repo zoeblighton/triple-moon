@@ -1,5 +1,7 @@
 import Layout from "./Layout";
-import { useMemo, useState, useEffect } from "react";
+import Seo from "./Seo";
+import { useMemo, useState } from "react";
+import { resources } from "./data/Resources";
 import "./Resources.css";
 
 function firstLetter(name = "") {
@@ -7,31 +9,48 @@ function firstLetter(name = "") {
   return c >= "A" && c <= "Z" ? c : "#";
 }
 
+function searchText(item) {
+  return [
+    item.name,
+    item.type,
+    item.alsoKnownAs,
+    item.keywords,
+    item.summary,
+    item.uses,
+    item.cautions,
+    item.associations?.sabbat,
+    item.associations?.deity,
+    item.associations?.planet,
+    item.associations?.magic,
+  ]
+    .flat()
+    .filter(Boolean)
+    .join(" ")
+    .toLowerCase();
+}
+
+function matchesElement(item, element) {
+  const value = item.associations?.element;
+  return Array.isArray(value) ? value.includes(element) : value === element;
+}
+
 export default function Resources() {
-  const [resources, setResources] = useState([]);
   const [typeFilter, setTypeFilter] = useState("All");
   const [elementFilter, setElementFilter] = useState("All");
   const [intentFilter, setIntentFilter] = useState("All");
   const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    const params = new URLSearchParams();
-
-    if (typeFilter !== "All") params.set("type", typeFilter);
-    if (elementFilter !== "All") params.set("element", elementFilter);
-    if (intentFilter !== "All") params.set("intent", intentFilter);
-    if (query.trim()) params.set("q", query.trim());
-
-    fetch(`http://localhost:4000/resources/search?${params.toString()}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setResources(data);
-      });
-  }, [typeFilter, elementFilter, intentFilter, query]);
-
   const filtered = useMemo(() => {
-    return resources;
-  }, [resources]);
+    const search = query.trim().toLowerCase();
+
+    return resources.filter(
+      (item) =>
+        (typeFilter === "All" || item.type === typeFilter) &&
+        (elementFilter === "All" || matchesElement(item, elementFilter)) &&
+        (intentFilter === "All" || item.filterTags.includes(intentFilter)) &&
+        (!search || searchText(item).includes(search)),
+    );
+  }, [typeFilter, elementFilter, intentFilter, query]);
 
   const grouped = useMemo(() => {
     const map = new Map();
@@ -55,9 +74,10 @@ export default function Resources() {
 
   return (
     <Layout>
+      <Seo path="/resources" />
       <section className="section">
         <div className="sectionHeader">
-          <h2>Resources</h2>
+          <h1 className="pageTitle">Resources</h1>
         </div>
         <div>
           <p className="muted">
@@ -76,10 +96,11 @@ export default function Resources() {
         </div>
         <div className="filters">
           <select
+            aria-label="Filter by type"
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
           >
-            <option value="All">All</option>
+            <option value="All">All types</option>
             <option value="Herb">Herb</option>
             <option value="Tree">Tree</option>
             <option value="Root">Root</option>
@@ -89,10 +110,11 @@ export default function Resources() {
           </select>
 
           <select
+            aria-label="Filter by element"
             value={elementFilter}
             onChange={(e) => setElementFilter(e.target.value)}
           >
-            <option value="All">All</option>
+            <option value="All">All elements</option>
             <option value="Air">Air</option>
             <option value="Fire">Fire</option>
             <option value="Water">Water</option>
@@ -100,10 +122,11 @@ export default function Resources() {
           </select>
 
           <select
+            aria-label="Filter by intention"
             value={intentFilter}
             onChange={(e) => setIntentFilter(e.target.value)}
           >
-            <option value="All">All</option>
+            <option value="All">All intentions</option>
             <option value="love">Love</option>
             <option value="protection">Protection</option>
             <option value="money">Money</option>

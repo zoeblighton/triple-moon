@@ -1,12 +1,14 @@
 import Layout from "./Layout";
+import Seo from "./Seo";
 import InstagramFeed from "./InstagramFeed";
 
 export default function AMagicalHome() {
   return (
     <Layout>
-      <section className="section">
+      <Seo path="/AMagicalHome" />
+      <section className="section prose">
         <div className="sectionHeader">
-          <h2>The Magical Home &amp; Imbolc</h2>
+          <h1 className="pageTitle">The Magical Home &amp; Imbolc</h1>
         </div>
 
         <div>

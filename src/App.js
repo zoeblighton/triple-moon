@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./Home";
 import Coaching from "./Coaching";
-import Contact from "./Contact";
 import SabbatWorkshops from "./SabbatWorkshops";
 import EnchantedHen from "./EnchantedHen";
 import Resources from "./Resources";
@@ -10,6 +9,7 @@ import TheJoyOfCrystals from "./TheJoyOfCrystals";
 import GalleryPage from "./GalleryPage";
 import AMagicalHome from "./AMagicalHome";
 import LovingMagically from "./LovingMagically";
+import NotFound from "./NotFound";
 
 export default function App() {
   return (
@@ -20,11 +20,11 @@ export default function App() {
       <Route path="/EnchantedHen" element={<EnchantedHen />} />
       <Route path="/resources" element={<Resources />} />
       <Route path="/EnergyCrystalSupport" element={<EnergyCrystalSupport />} />
-      <Route path="/contact" element={<Contact />} />
-      <Route path="TheJoyOfCrystals" element={<TheJoyOfCrystals />} />
+      <Route path="/TheJoyOfCrystals" element={<TheJoyOfCrystals />} />
       <Route path="/GalleryPage" element={<GalleryPage />} />
       <Route path="/AMagicalHome" element={<AMagicalHome />} />
       <Route path="/LovingMagically" element={<LovingMagically />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

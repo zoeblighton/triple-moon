@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import Layout from "./Layout";
+import Seo from "./Seo";
 import "./GalleryPage.css";
 
 const galleryItems = [
@@ -366,6 +367,15 @@ export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedImage, setSelectedImage] = useState(null);
 
+  useEffect(() => {
+    if (!selectedImage) return;
+    const onKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selectedImage]);
+
   const categories = useMemo(() => {
     const unique = [...new Set(galleryItems.map((item) => item.category))];
     return ["All", ...unique];
@@ -378,6 +388,7 @@ export default function GalleryPage() {
 
   return (
     <Layout>
+      <Seo path="/GalleryPage" />
       <div className="galleryPage">
         <header className="galleryPageHeader">
           <p className="galleryPageEyebrow">Triple Moon</p>
@@ -418,8 +429,10 @@ export default function GalleryPage() {
             >
               <img
                 src={item.image}
-                alt={item.title}
+                alt={`${item.title}, ${item.category}`}
                 className="galleryCardImage"
+                loading="lazy"
+                decoding="async"
               />
               <div className="galleryCardContent">
                 <span className="galleryCardCategory">{item.category}</span>
@@ -432,6 +445,9 @@ export default function GalleryPage() {
         {selectedImage && (
           <div
             className="galleryLightbox"
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedImage.title}
             onClick={() => setSelectedImage(null)}
           >
             <div
@@ -443,13 +459,14 @@ export default function GalleryPage() {
                 onClick={() => setSelectedImage(null)}
                 className="galleryLightboxClose"
                 aria-label="Close image"
+                autoFocus
               >
                 ×
               </button>
 
               <img
                 src={selectedImage.image}
-                alt={selectedImage.title}
+                alt={`${selectedImage.title}, ${selectedImage.category}`}
                 className="galleryLightboxImage"
               />
 

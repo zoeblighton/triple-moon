@@ -50,18 +50,21 @@ export default function Layout({ children, showContact = true }) {
 
   return (
     <div className="page">
+      <a className="skipLink" href="#scrollRoot">
+        Skip to content
+      </a>
       <header className="header">
         <div className="brand">
           <div>
-            <h1 className="logoWrap">
-              <Link to="/" aria-label="Go to homepage">
+            <div className="logoWrap">
+              <Link to="/" aria-label="Triple Moon homepage">
                 <img
                   src="/images/logo.png"
                   alt="Triple Moon logo"
                   className="logo"
                 />
               </Link>
-            </h1>
+            </div>
 
             <div
               data-tags="Spiritual Workshops Colchester"
@@ -79,14 +82,21 @@ export default function Layout({ children, showContact = true }) {
             className="navToggle"
             aria-label={navOpen ? "Close menu" : "Open menu"}
             aria-expanded={navOpen}
+            aria-controls="site-nav"
             onClick={() => setNavOpen((v) => !v)}
           >
             <span className="navToggleBars" aria-hidden="true" />
           </button>
 
-          <nav ref={navRef} className="nav" onClick={handleNavClick}>
+          <nav
+            ref={navRef}
+            id="site-nav"
+            aria-label="Main"
+            className="nav"
+            onClick={handleNavClick}
+          >
             <Link to="/#offerings">Offerings</Link>
-            <Link to="/gallerypage">Gallery</Link>
+            <Link to="/GalleryPage">Gallery</Link>
             <Link to="/resources">Resources</Link>
             <Link className="button" to="/#contact">
               Book / Contact
@@ -100,9 +110,7 @@ export default function Layout({ children, showContact = true }) {
         {showContact && (
           <section id="contact" className="section">
             <h2>Book / Contact</h2>
-            <p className="muted">
-              <ContactSection />
-            </p>
+            <ContactSection />
           </section>
         )}
       </main>
@@ -123,7 +131,7 @@ export default function Layout({ children, showContact = true }) {
           <Link to="/#offerings">Offerings</Link>
           <Link to="/#contact">Contact</Link>
           <Link to="/resources">Resources</Link>
-          <Link to="/gallerypage">Gallery</Link>
+          <Link to="/GalleryPage">Gallery</Link>
         </div>
       </footer>
     </div>

@@ -1,12 +1,14 @@
 import Layout from "./Layout";
+import Seo from "./Seo";
 import "./App.css";
 
 export default function TheJoyOfCrystals() {
   return (
     <Layout>
-      <section className="section">
+      <Seo path="/TheJoyOfCrystals" />
+      <section className="section prose">
         <div className="sectionHeader">
-          <h2>The Joy of Crystals</h2>
+          <h1 className="pageTitle">The Joy of Crystals</h1>
           <p className="muted">
             Discover the transformative power of crystals and their connection
             to the natural world.

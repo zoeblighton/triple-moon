@@ -1,12 +1,14 @@
 import Layout from "./Layout";
+import Seo from "./Seo";
 import "./Coaching.css";
 
 export default function EnchantedHen() {
   return (
     <Layout>
+      <Seo path="/EnchantedHen" />
       <section className="section">
         <div className="sectionHeader">
-          <h2>The Enchanted Hen</h2>
+          <h1 className="pageTitle">The Enchanted Hen</h1>
           <p className="muted">
             You bring the bubbles, I bring the magic — a sacred celebration of
             love.

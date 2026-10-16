@@ -1,10 +1,12 @@
 import Layout from "./Layout";
+import Seo from "./Seo";
 
 export default function EnergyCrystalSupport() {
   return (
     <Layout>
+      <Seo path="/EnergyCrystalSupport" />
       <section className="section">
-        <h2>What is Reiki Seichem?</h2>
+        <h1 className="pageTitle">What is Reiki Seichem?</h1>
 
         <p>
           Reiki and Seichem are complementary, hands-on energy healing
@@ -69,9 +71,12 @@ export default function EnergyCrystalSupport() {
         <section className="section">
           <h2>Ready to book?</h2>
           <img
-            class="reikiImage"
-            src="/images/reiki-poster.png"
-            alt="Reiki Healing"
+            className="reikiImage"
+            src="/images/reiki-poster.jpg"
+            alt="Discover the power of Reiki healing: deep relaxation, emotional release and energetic balance. Full-body energy healing, chakra cleansing, stress and anxiety relief, distance Reiki sessions and emotional healing support."
+            loading="lazy"
+            width="1200"
+            height="1006"
           />
           <p className="muted">Get in touch below.</p>
         </section>
