@@ -388,7 +388,7 @@ export default function GalleryPage() {
 
   return (
     <Layout>
-      <Seo path="/GalleryPage" />
+      <Seo path="/gallerypage" />
       <div className="galleryPage">
         <header className="galleryPageHeader">
           <p className="galleryPageEyebrow">Triple Moon</p>

@@ -5,7 +5,7 @@ import InstagramFeed from "./InstagramFeed";
 export default function SabbatWorkshops() {
   return (
     <Layout>
-      <Seo path="/SabbatWorkshops" />
+      <Seo path="/sabbatworkshops" />
       <section className="section prose">
         <div className="sectionHeader">
           <h1 className="pageTitle">Cyclical Living Workshops</h1>

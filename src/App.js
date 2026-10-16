@@ -16,14 +16,14 @@ export default function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/coaching" element={<Coaching />} />
-      <Route path="/SabbatWorkshops" element={<SabbatWorkshops />} />
-      <Route path="/EnchantedHen" element={<EnchantedHen />} />
+      <Route path="/sabbatworkshops" element={<SabbatWorkshops />} />
+      <Route path="/enchantedhen" element={<EnchantedHen />} />
       <Route path="/resources" element={<Resources />} />
-      <Route path="/EnergyCrystalSupport" element={<EnergyCrystalSupport />} />
-      <Route path="/TheJoyOfCrystals" element={<TheJoyOfCrystals />} />
-      <Route path="/GalleryPage" element={<GalleryPage />} />
-      <Route path="/AMagicalHome" element={<AMagicalHome />} />
-      <Route path="/LovingMagically" element={<LovingMagically />} />
+      <Route path="/energycrystalsupport" element={<EnergyCrystalSupport />} />
+      <Route path="/thejoyofcrystals" element={<TheJoyOfCrystals />} />
+      <Route path="/gallerypage" element={<GalleryPage />} />
+      <Route path="/amagicalhome" element={<AMagicalHome />} />
+      <Route path="/lovingmagically" element={<LovingMagically />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );

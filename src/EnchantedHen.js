@@ -5,7 +5,7 @@ import "./Coaching.css";
 export default function EnchantedHen() {
   return (
     <Layout>
-      <Seo path="/EnchantedHen" />
+      <Seo path="/enchantedhen" />
       <section className="section">
         <div className="sectionHeader">
           <h1 className="pageTitle">The Enchanted Hen</h1>

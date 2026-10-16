@@ -4,7 +4,7 @@ import Seo from "./Seo";
 export default function EnergyCrystalSupport() {
   return (
     <Layout>
-      <Seo path="/EnergyCrystalSupport" />
+      <Seo path="/energycrystalsupport" />
       <section className="section">
         <h1 className="pageTitle">What is Reiki Seichem?</h1>
 

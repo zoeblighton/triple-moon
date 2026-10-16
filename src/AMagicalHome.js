@@ -5,7 +5,7 @@ import InstagramFeed from "./InstagramFeed";
 export default function AMagicalHome() {
   return (
     <Layout>
-      <Seo path="/AMagicalHome" />
+      <Seo path="/amagicalhome" />
       <section className="section prose">
         <div className="sectionHeader">
           <h1 className="pageTitle">The Magical Home &amp; Imbolc</h1>

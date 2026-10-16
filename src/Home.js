@@ -197,7 +197,7 @@ export default function Home() {
             tabIndex={0}
             aria-label="Offerings horizontal list"
           >
-            <Link to="./SabbatWorkshops" className="card cardLink offeringCard">
+            <Link to="/sabbatworkshops" className="card cardLink offeringCard">
               <h3>Cyclical Living Workshop</h3>
               <p>
                 Group workshops aligned with the Wheel of the Year — ritual,
@@ -211,7 +211,7 @@ export default function Home() {
             </Link>
 
             <Link
-              to="./TheJoyOfCrystals"
+              to="/thejoyofcrystals"
               className="card cardLink offeringCard"
             >
               <h3>The Joy Of Crystals</h3>
@@ -230,7 +230,7 @@ export default function Home() {
                 <li>Crystal healing demonstration.</li>
               </ul>
             </Link>
-            <Link to="./EnchantedHen" className="card cardLink offeringCard">
+            <Link to="/enchantedhen" className="card cardLink offeringCard">
               <h3>The Enchanted Hen - Bridal Workshop</h3>
               <p>
                 You bring the bubbles, i bring the magic. A sacred celebration
@@ -242,7 +242,7 @@ export default function Home() {
                 <li>Group blessing and sharing circle</li>
               </ul>
             </Link>
-            <Link to="./AMagicalHome" className="card cardLink offeringCard">
+            <Link to="/amagicalhome" className="card cardLink offeringCard">
               <h3>The Magical Home & Imbolc</h3>
               <p>
                 Come and spend some magical time with us, lighting the way for
@@ -256,7 +256,7 @@ export default function Home() {
               </ul>
             </Link>
 
-            <Link to="./LovingMagically" className="card cardLink offeringCard">
+            <Link to="/lovingmagically" className="card cardLink offeringCard">
               <h3>Loving Magically</h3>
 
               <p>
@@ -314,7 +314,7 @@ export default function Home() {
             aria-label="Other offerings horizontal list"
           >
             <Link
-              to="./EnergyCrystalSupport"
+              to="/energycrystalsupport"
               className="card cardLink offeringCard"
             >
               <h3>Reiki, Energy & Crystal Support</h3>
@@ -328,7 +328,7 @@ export default function Home() {
                 <li>Seasonal rituals</li>
               </ul>
             </Link>
-            <Link to="./Coaching" className="card cardLink offeringCard">
+            <Link to="/coaching" className="card cardLink offeringCard">
               <h3>1:1 Life Coaching</h3>
               <p>
                 {" "}

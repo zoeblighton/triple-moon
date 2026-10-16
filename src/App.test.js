@@ -33,6 +33,14 @@ test("sub pages get their own title, canonical and h1", () => {
   expect(document.querySelectorAll("#contact")).toHaveLength(1);
 });
 
+test("old mixed-case links still work and point to the lowercase canonical", () => {
+  renderAt("/SabbatWorkshops");
+  expect(
+    screen.getByRole("heading", { level: 1, name: /Cyclical Living/ }),
+  ).toBeInTheDocument();
+  expect(canonical()).toBe("https://triplemoon.co.uk/sabbatworkshops");
+});
+
 test("resources load without an API and can be filtered", () => {
   renderAt("/resources");
   const cards = () => document.querySelectorAll(".resourcesLetterBlock .card");

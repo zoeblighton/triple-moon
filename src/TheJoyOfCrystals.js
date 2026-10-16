@@ -5,7 +5,7 @@ import "./App.css";
 export default function TheJoyOfCrystals() {
   return (
     <Layout>
-      <Seo path="/TheJoyOfCrystals" />
+      <Seo path="/thejoyofcrystals" />
       <section className="section prose">
         <div className="sectionHeader">
           <h1 className="pageTitle">The Joy of Crystals</h1>

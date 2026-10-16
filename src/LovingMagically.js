@@ -5,7 +5,7 @@ import InstagramFeed from "./InstagramFeed";
 export default function LovingMagically() {
   return (
     <Layout>
-      <Seo path="/LovingMagically" />
+      <Seo path="/lovingmagically" />
       <section className="section prose">
         <div className="sectionHeader">
           <h1 className="pageTitle">Loving Magically</h1>
