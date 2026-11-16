@@ -1,70 +1,52 @@
-# Getting Started with Create React App
+# Triple Moon
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Come home to yourself.**
 
-## Available Scripts
+A website for Triple Moon, a spiritual-wellness practice in Colchester, Essex, offering seasonal workshops, crystal healing, Reiki Seichem and life coaching. I led the full creative direction (identity, layout and UX) and built it as a responsive React site.
 
-In the project directory, you can run:
+**[triplemoon.co.uk →](https://triplemoon.co.uk)**
 
-### `npm start`
+![The Triple Moon homepage: "Come home to yourself"](docs/screenshot.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## What's on the site
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Services and workshops**: coaching, Sabbat workshops following the Wheel of the Year, crystal workshops, energy and crystal support, and more, each on its own page.
+- **Resource library**: a searchable guide to over 200 crystals, herbs, flowers, trees and spices, filterable by type, element and intention.
+- **Gallery and Instagram**: a photo gallery plus featured Instagram posts.
+- **Contact form**: booking enquiries sent through Formspree, with no backend to maintain.
 
-### `npm test`
+## Built with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React 19 (Create React App), React Router, plain CSS and Formspree. Hosted on Netlify with a custom domain.
 
-### `npm run build`
+## SEO for a single-page app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A React app normally serves the same empty HTML for every URL, so search engines and link previews that don't run JavaScript see nothing useful. This site fixes that without a framework:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Prerendered page heads.** After the build, [`scripts/prerender-head.js`](scripts/prerender-head.js) writes a static HTML file for each route, with that page's title, description, canonical URL and social tags already in the `<head>`. Netlify then serves `build/coaching.html` at `/coaching`, and so on.
+- **One source of truth.** Page titles and descriptions live in [`src/seo/pages.json`](src/seo/pages.json), shared by the prerender script and the in-app `<Seo>` component.
+- **Clean, canonical URLs.** [`netlify.toml`](netlify.toml) 301-redirects `http://`, `www.` and the old `.netlify.app` address to `https://triplemoon.co.uk`, and serves a `sitemap.xml` and `robots.txt`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Run locally
 
-### `npm run eject`
+```bash
+npm install
+npm start        # http://localhost:3000
+npm run build    # production build in build/, then prerenders each page's <head>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Structure
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+src/
+  *.js          one component per page (Home, Coaching, SabbatWorkshops, Resources…)
+  data/         resource library data
+  seo/          page titles and descriptions (pages.json) and site settings
+scripts/        prerender-head.js: per-page HTML heads after the build
+api/            a small Express API for the resource library (experimental, not used by the live site)
+public/         images, sitemap.xml, robots.txt
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Designed and built by [Zoe Blighton](https://zoeblighton.com) for Triple Moon.
